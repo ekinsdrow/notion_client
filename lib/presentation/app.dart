@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:notion_client/internal/routers/router.gr.dart';
 
 class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+  App({Key? key}) : super(key: key);
+
+  final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    final _appRouter = AppRouter();
-
-    return MaterialApp.router(
-      routeInformationParser: _appRouter.defaultRouteParser(),
+    return MaterialApp.router(      routeInformationParser: _appRouter.defaultRouteParser(),
       routerDelegate: _appRouter.delegate(),
     );
   }
