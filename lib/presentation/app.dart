@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notion_client/internal/routers/router.gr.dart';
+import 'package:notion_client/presentation/theme/theme.dart';
 
 class App extends StatelessWidget {
   App({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class App extends StatelessWidget {
       routeInformationParser: _appRouter.defaultRouteParser(),
       routerDelegate: _appRouter.delegate(),
       debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
     );
   }
 }
