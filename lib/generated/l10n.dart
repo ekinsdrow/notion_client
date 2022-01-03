@@ -70,30 +70,30 @@ class S {
     );
   }
 
-  /// `Продолжить`
+  /// `Next`
   String get next {
     return Intl.message(
-      'Продолжить',
+      'Next',
       name: 'next',
       desc: '',
       args: [],
     );
   }
 
-  /// `Открыть notion.so`
+  /// `Open notion.so`
   String get open_notion {
     return Intl.message(
-      'Открыть notion.so',
+      'Open notion.so',
       name: 'open_notion',
       desc: '',
       args: [],
     );
   }
 
-  /// `Войти`
+  /// `Sign in`
   String get sign_in {
     return Intl.message(
-      'Войти',
+      'Sign in',
       name: 'sign_in',
       desc: '',
       args: [],
