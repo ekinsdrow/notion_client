@@ -70,6 +70,7 @@ class _WelcomePageState extends State<WelcomePage> {
           children: [
             Expanded(
               child: PageView(
+                physics: const BouncingScrollPhysics(),
                 controller: _pageController,
                 children: [
                   const FirstPage(),
