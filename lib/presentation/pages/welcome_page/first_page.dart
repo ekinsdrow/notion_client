@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notion_client/generated/l10n.dart';
 import 'package:notion_client/presentation/assets_paths/resources.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
 
@@ -16,6 +17,7 @@ class FirstPage extends StatelessWidget {
         const SizedBox(
           height: paddingsMedium,
         ),
+        
       ],
     );
   }

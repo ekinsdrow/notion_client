@@ -36,6 +36,8 @@ dependencies:
   json_annotation: ^4.3.0
   rxdart: ^0.27.2
   spider: ^2.0.0
+  flutter_localizations: 
+    sdk: flutter         
 
 dev_dependencies:
   flutter_test:
