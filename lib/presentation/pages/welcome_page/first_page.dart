@@ -8,17 +8,34 @@ class FirstPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset(
-          PngPath.welcomeImage,
-          width: double.infinity,
-        ),
-        const SizedBox(
-          height: paddingsMedium,
-        ),
-        
-      ],
+    return Container(
+      padding: const EdgeInsets.only(
+        left: paddingsMedium,
+        right: paddingsMedium,
+        bottom: paddingsBig,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Image.asset(
+            PngPath.welcomeImage,
+            width: double.infinity,
+          ),
+          const SizedBox(
+            height: paddingsMedium,
+          ),
+          Text(
+            S.of(context).hello_header,
+            style: Theme.of(context).textTheme.headline3,
+          ),
+          const SizedBox(
+            height: paddingsSmall,
+          ),
+          Text(
+            S.of(context).lorem_ipsum,
+          ),
+        ],
+      ),
     );
   }
 }

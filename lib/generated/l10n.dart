@@ -69,6 +69,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Продолжить`
+  String get next {
+    return Intl.message(
+      'Продолжить',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Открыть notion.so`
+  String get open_notion {
+    return Intl.message(
+      'Открыть notion.so',
+      name: 'open_notion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Войти`
+  String get sign_in {
+    return Intl.message(
+      'Войти',
+      name: 'sign_in',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -25,6 +25,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "hello_header": MessageLookupByLibrary.simpleMessage(
             "Привет, мы рады, что ты с нами!"),
         "lorem_ipsum": MessageLookupByLibrary.simpleMessage(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco .")
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ."),
+        "next": MessageLookupByLibrary.simpleMessage("Продолжить"),
+        "open_notion": MessageLookupByLibrary.simpleMessage("Open notion.so"),
+        "sign_in": MessageLookupByLibrary.simpleMessage("Sign in")
       };
 }

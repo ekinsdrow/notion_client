@@ -16,12 +16,11 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
 
-
-    //TODO(Ivan): remove 
+    //TODO(Ivan): remove
     Future.delayed(
       const Duration(microseconds: 500),
     ).then(
-      (value) => context.router.push(
+      (value) => context.router.replace(
         const WelcomeRoute(),
       ),
     );
