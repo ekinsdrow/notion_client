@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:notion_client/generated/l10n.dart';
+import 'package:notion_client/presentation/assets_paths/resources.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
 
-//TODO(Ann):Page view
 class SecondPage extends StatelessWidget {
   const SecondPage({
     required this.backButtonCallback,
@@ -16,7 +17,7 @@ class SecondPage extends StatelessWidget {
       padding: const EdgeInsets.only(
         left: paddingsMedium,
         right: paddingsMedium,
-        bottom: paddingsBig,
+
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,6 +28,10 @@ class SecondPage extends StatelessWidget {
               Icons.arrow_back_ios,
             ),
           ),
+          Image.asset(PngPath.welcomeScreen1),
+          const SizedBox(height: paddingsMedium,),
+          Text(S.of(context).lorem_ipsum,)
+
         ],
       ),
     );
