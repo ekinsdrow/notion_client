@@ -6,6 +6,23 @@ class AppTheme {
   static Color get backgroundColor => const Color(0xFFFFFFFF);
 
   static ThemeData get lightTheme => ThemeData(
+        inputDecorationTheme: InputDecorationTheme(
+          border: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: primaryColor,
+            ),
+          ),
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: primaryColor,
+            ),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: primaryColor,
+            ),
+          ),
+        ),
         textTheme: TextTheme(
           headline1: TextStyle(
             fontSize: 48,

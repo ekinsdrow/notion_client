@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "next": MessageLookupByLibrary.simpleMessage("Продолжить"),
         "open_notion":
             MessageLookupByLibrary.simpleMessage("Открыть notion.so"),
-        "sign_in": MessageLookupByLibrary.simpleMessage("Войти")
+        "sign_in": MessageLookupByLibrary.simpleMessage("Войти"),
+        "token": MessageLookupByLibrary.simpleMessage("Токен")
       };
 }

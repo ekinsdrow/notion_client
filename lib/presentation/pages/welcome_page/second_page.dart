@@ -17,21 +17,34 @@ class SecondPage extends StatelessWidget {
       padding: const EdgeInsets.only(
         left: paddingsMedium,
         right: paddingsMedium,
-
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          IconButton(
-            onPressed: backButtonCallback,
-            icon: const Icon(
-              Icons.arrow_back_ios,
+          GestureDetector(
+            onTap: backButtonCallback,
+            child: Container(
+              color: Colors.transparent,
+              alignment: Alignment.centerLeft,
+              width: 40,
+              height: 40,
+              child: const Icon(
+                Icons.arrow_back_ios,
+              ),
             ),
           ),
-          Image.asset(PngPath.welcomeScreen1),
-          const SizedBox(height: paddingsMedium,),
-          Text(S.of(context).lorem_ipsum,)
-
+          const SizedBox(
+            height: paddingsMedium,
+          ),
+          Image.asset(
+            PngPath.welcomeScreen1,
+          ),
+          const SizedBox(
+            height: paddingsMedium,
+          ),
+          Text(
+            S.of(context).lorem_ipsum,
+          ),
         ],
       ),
     );

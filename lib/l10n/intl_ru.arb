@@ -2,6 +2,7 @@
   "hello_header": "Привет, мы рады, что ты с нами!",
   "lorem_ipsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco .",
   "next": "Продолжить",
+  "token":"Токен",
   "open_notion": "Открыть notion.so",
   "sign_in":"Войти"
 }

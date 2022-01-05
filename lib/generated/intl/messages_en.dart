@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ."),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "open_notion": MessageLookupByLibrary.simpleMessage("Open notion.so"),
-        "sign_in": MessageLookupByLibrary.simpleMessage("Sign in")
+        "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
+        "token": MessageLookupByLibrary.simpleMessage("Token")
       };
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:notion_client/generated/l10n.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
 import 'package:notion_client/presentation/theme/theme.dart';
 
-//TODO(Ann):Page view
 class ThirdPage extends StatelessWidget {
   const ThirdPage({
     Key? key,
@@ -22,25 +22,24 @@ class ThirdPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          IconButton(
-            onPressed: backButtonCallback,
-            icon: const Icon(
-              Icons.arrow_back_ios,
+          GestureDetector(
+            onTap: backButtonCallback,
+            child: Container(
+              color: Colors.transparent,
+              alignment: Alignment.centerLeft,
+              width: 40,
+              height: 40,
+              child: const Icon(
+                Icons.arrow_back_ios,
+              ),
             ),
+          ),
+          const SizedBox(
+            height: paddingsMedium,
           ),
           TextField(
             decoration: InputDecoration(
-              hintText: 'Токен',
-              border: UnderlineInputBorder(
-                borderSide: BorderSide(
-                  color: AppTheme.primaryColor,
-                ),
-              ),
-              focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(
-                  color: AppTheme.primaryColor,
-                ),
-              ),
+              hintText: S.of(context).token,
             ),
           ),
         ],

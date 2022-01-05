@@ -80,6 +80,16 @@ class S {
     );
   }
 
+  /// `Token`
+  String get token {
+    return Intl.message(
+      'Token',
+      name: 'token',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Open notion.so`
   String get open_notion {
     return Intl.message(
