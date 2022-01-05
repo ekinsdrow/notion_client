@@ -27,6 +27,8 @@ class _WelcomePageState extends State<WelcomePage> {
         if (_pageController.page != null) {
           if (_pageController.page! < _page) {
             _isNext = false;
+
+            FocusScope.of(context).unfocus();
           } else {
             _isNext = true;
           }
@@ -73,9 +75,15 @@ class _WelcomePageState extends State<WelcomePage> {
                 physics: const BouncingScrollPhysics(),
                 controller: _pageController,
                 children: [
-                  const FirstPage(),
-                  SecondPage(
-                    backButtonCallback: _previousPage,
+                  const SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    child: FirstPage(),
+                  ),
+                  SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    child: SecondPage(
+                      backButtonCallback: _previousPage,
+                    ),
                   ),
                   ThirdPage(
                     backButtonCallback: _previousPage,

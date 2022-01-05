@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notion_client/generated/l10n.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
-import 'package:notion_client/presentation/theme/theme.dart';
 
 class ThirdPage extends StatelessWidget {
   const ThirdPage({
@@ -41,6 +40,7 @@ class ThirdPage extends StatelessWidget {
             decoration: InputDecoration(
               hintText: S.of(context).token,
             ),
+            autofocus: true,
           ),
         ],
       ),

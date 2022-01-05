@@ -7,6 +7,9 @@ class AppTheme {
 
   static ThemeData get lightTheme => ThemeData(
         inputDecorationTheme: InputDecorationTheme(
+          hintStyle: const TextStyle(
+            color: Color(0xFFC4C4C4),
+          ),
           border: UnderlineInputBorder(
             borderSide: BorderSide(
               color: primaryColor,
