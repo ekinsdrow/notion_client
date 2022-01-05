@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
+import 'package:notion_client/presentation/theme/theme.dart';
 
 //TODO(Ann):Page view
 class ThirdPage extends StatelessWidget {
@@ -25,6 +26,21 @@ class ThirdPage extends StatelessWidget {
             onPressed: backButtonCallback,
             icon: const Icon(
               Icons.arrow_back_ios,
+            ),
+          ),
+          TextField(
+            decoration: InputDecoration(
+              hintText: 'Токен',
+              border: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: AppTheme.primaryColor,
+                ),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: AppTheme.primaryColor,
+                ),
+              ),
             ),
           ),
         ],

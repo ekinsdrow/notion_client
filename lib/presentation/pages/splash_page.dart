@@ -4,6 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:notion_client/internal/routers/router.gr.dart';
 import 'package:notion_client/presentation/assets_paths/resources.dart';
 
+
+
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
 
