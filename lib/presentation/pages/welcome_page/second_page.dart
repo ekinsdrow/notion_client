@@ -46,6 +46,12 @@ class SecondPage extends StatelessWidget {
           Text(
             S.of(context).welcome_text_2,
           ),
+          const SizedBox(
+            height: paddingsMedium,
+          ),
+          Text(
+            S.of(context).welcome_text_3,
+          ),
         ],
       ),
     );

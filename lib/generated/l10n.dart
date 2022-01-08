@@ -129,6 +129,16 @@ class S {
       args: [],
     );
   }
+
+  /// `You need to sign in with either apple or password / SAML SSO. Google does not allow authorization inside other applications.`
+  String get welcome_text_3 {
+    return Intl.message(
+      'You need to sign in with either apple or password / SAML SSO. Google does not allow authorization inside other applications.',
+      name: 'welcome_text_3',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

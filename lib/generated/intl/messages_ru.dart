@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "welcome_text_1": MessageLookupByLibrary.simpleMessage(
             "Notion Client - это неофициальное приложение для сервиса Notion.so. Наша цель - сделать использование Notion на телефоне удобнее. Надеемся, вам понравится"),
         "welcome_text_2": MessageLookupByLibrary.simpleMessage(
-            "При нажатии на кнопку вам будет предложено войти в ваш аккаунт notion и выбрать страницы, к которым вы дадите доступ нашему приложению")
+            "При нажатии на кнопку вам будет предложено войти в ваш аккаунт Notion и выбрать страницы, к которым вы дадите доступ нашему приложению"),
+        "welcome_text_3": MessageLookupByLibrary.simpleMessage(
+            "Необходимо выполнить вход либо с помощью apple, либо используя пароль/SAML SSO. Google не позволяет делать авторизацию внутри чужих приложений.")
       };
 }
