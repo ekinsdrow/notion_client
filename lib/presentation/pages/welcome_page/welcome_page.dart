@@ -4,7 +4,6 @@ import 'package:notion_client/generated/l10n.dart';
 import 'package:notion_client/internal/routers/router.gr.dart';
 import 'package:notion_client/presentation/pages/welcome_page/first_page.dart';
 import 'package:notion_client/presentation/pages/welcome_page/second_page.dart';
-import 'package:notion_client/presentation/pages/welcome_page/third_page.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
 import 'package:notion_client/presentation/theme/theme.dart';
 
@@ -89,9 +88,6 @@ class _WelcomePageState extends State<WelcomePage> {
                       backButtonCallback: _previousPage,
                     ),
                   ),
-                  ThirdPage(
-                    backButtonCallback: _previousPage,
-                  ),
                 ],
               ),
             ),
@@ -106,7 +102,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      for (int i = 0; i < 3; i++)
+                      for (int i = 0; i < 2; i++)
                         Builder(builder: (context) {
                           final _active = (_isNext ? _page.ceil() : _page.floor()) == i;
 
@@ -133,59 +129,16 @@ class _WelcomePageState extends State<WelcomePage> {
 
                     return AnimatedSwitcher(
                       duration: const Duration(milliseconds: 300),
-                      child: _index == 1
-                          ? Row(
-                              children: [
-                                Expanded(
-                                  child: SizedBox(
-                                    height: 46,
-                                    child: ElevatedButton(
-                                      onPressed: () {
-                                        //TODO(Ann): open notion.so page
-                                      },
-                                      child: Text(
-                                        S.of(context).open_notion,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: paddingsMedium,
-                                ),
-                                ClipOval(
-                                  child: Material(
-                                    child: InkWell(
-                                      onTap: _nextPage,
-                                      child: Container(
-                                        width: 46,
-                                        height: 46,
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                            color: AppTheme.primaryColor,
-                                            width: 2,
-                                          ),
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Icon(
-                                          Icons.arrow_forward,
-                                          color: AppTheme.primaryColor,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            )
-                          : SizedBox(
-                              width: double.infinity,
-                              height: 46,
-                              child: ElevatedButton(
-                                onPressed: _index == 0 ? _nextPage : _signIn,
-                                child: Text(
-                                  _index == 0 ? S.of(context).next : S.of(context).sign_in,
-                                ),
-                              ),
-                            ),
+                      child: SizedBox(
+                        width: double.infinity,
+                        height: 46,
+                        child: ElevatedButton(
+                          onPressed: _index == 0 ? _nextPage : _signIn,
+                          child: Text(
+                            _index == 0 ? S.of(context).next : S.of(context).sign_in,
+                          ),
+                        ),
+                      ),
                     );
                   }),
                 ],
