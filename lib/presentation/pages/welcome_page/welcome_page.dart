@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:notion_client/generated/l10n.dart';
+import 'package:notion_client/internal/routers/router.gr.dart';
 import 'package:notion_client/presentation/pages/welcome_page/first_page.dart';
 import 'package:notion_client/presentation/pages/welcome_page/second_page.dart';
 import 'package:notion_client/presentation/pages/welcome_page/third_page.dart';
@@ -17,6 +19,12 @@ class _WelcomePageState extends State<WelcomePage> {
   final _pageController = PageController();
   var _page = 0.0;
   var _isNext = true;
+
+  void _signIn() {
+    context.router.push(
+      const AuthRoute(),
+    );
+  }
 
   @override
   void initState() {
@@ -57,10 +65,6 @@ class _WelcomePageState extends State<WelcomePage> {
       duration: const Duration(milliseconds: 300),
       curve: Curves.ease,
     );
-  }
-
-  void _signIn() {
-    //TODO(Ivan): save token
   }
 
   @override
