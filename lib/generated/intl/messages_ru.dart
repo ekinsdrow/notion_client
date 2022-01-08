@@ -30,6 +30,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "open_notion":
             MessageLookupByLibrary.simpleMessage("Открыть notion.so"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Войти"),
-        "token": MessageLookupByLibrary.simpleMessage("Токен")
+        "token": MessageLookupByLibrary.simpleMessage("Токен"),
+        "welcome_text_1": MessageLookupByLibrary.simpleMessage(
+            "Notion Client - это неофициальное приложение для сервиса Notion.so. Наша цель - сделать использование Notion на телефоне удобнее. Надеемся, вам понравится"),
+        "welcome_text_2": MessageLookupByLibrary.simpleMessage(
+            "При нажатии на кнопку вам будет предложено войти в ваш аккаунт notion и выбрать страницы, к которым вы дадите доступ нашему приложению")
       };
 }

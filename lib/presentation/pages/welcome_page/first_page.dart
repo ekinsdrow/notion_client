@@ -31,9 +31,8 @@ class FirstPage extends StatelessWidget {
           const SizedBox(
             height: paddingsSmall,
           ),
-          //TODO(Ivan): change text
           Text(
-            S.of(context).lorem_ipsum,
+            S.of(context).welcome_text_1,
           ),
         ],
       ),

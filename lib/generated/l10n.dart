@@ -80,16 +80,6 @@ class S {
     );
   }
 
-  /// `Token`
-  String get token {
-    return Intl.message(
-      'Token',
-      name: 'token',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Open notion.so`
   String get open_notion {
     return Intl.message(
@@ -105,6 +95,36 @@ class S {
     return Intl.message(
       'Sign in',
       name: 'sign_in',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Token`
+  String get token {
+    return Intl.message(
+      'Token',
+      name: 'token',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notion Client is an unofficial application for the Notion.so. Our goal is to make the use of the Notion on the phone convenient. We hope you will like it`
+  String get welcome_text_1 {
+    return Intl.message(
+      'Notion Client is an unofficial application for the Notion.so. Our goal is to make the use of the Notion on the phone convenient. We hope you will like it',
+      name: 'welcome_text_1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `When you click on the button, you will be prompted to log into your Notion account and select the pages to which you will give access to our application`
+  String get welcome_text_2 {
+    return Intl.message(
+      'When you click on the button, you will be prompted to log into your Notion account and select the pages to which you will give access to our application',
+      name: 'welcome_text_2',
       desc: '',
       args: [],
     );

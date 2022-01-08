@@ -2,7 +2,9 @@
   "hello_header": "Привет, мы рады, что ты с нами!",
   "lorem_ipsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco .",
   "next": "Продолжить",
-  "token":"Токен",
   "open_notion": "Открыть notion.so",
-  "sign_in":"Войти"
+  "sign_in": "Войти",
+  "token": "Токен",
+  "welcome_text_1":"Notion Client - это неофициальное приложение для сервиса Notion.so. Наша цель - сделать использование Notion на телефоне удобнее. Надеемся, вам понравится",
+  "welcome_text_2":"При нажатии на кнопку вам будет предложено войти в ваш аккаунт notion и выбрать страницы, к которым вы дадите доступ нашему приложению"
 }

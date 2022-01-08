@@ -36,14 +36,15 @@ class SecondPage extends StatelessWidget {
           const SizedBox(
             height: paddingsMedium,
           ),
-          Image.asset(
-            PngPath.welcomeScreen1,
+          Text(
+            S.of(context).sign_in,
+            style: Theme.of(context).textTheme.headline3,
           ),
           const SizedBox(
             height: paddingsMedium,
           ),
           Text(
-            S.of(context).lorem_ipsum,
+            S.of(context).welcome_text_2,
           ),
         ],
       ),
