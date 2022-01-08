@@ -254,8 +254,10 @@ class _$AuthStateTearOff {
     return const Loading();
   }
 
-  Success success() {
-    return const Success();
+  Success success({required String token}) {
+    return Success(
+      token: token,
+    );
   }
 
   Error error() {
@@ -272,7 +274,7 @@ mixin _$AuthState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(String token) success,
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
@@ -280,7 +282,7 @@ mixin _$AuthState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String token)? success,
     TResult Function()? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -288,7 +290,7 @@ mixin _$AuthState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String token)? success,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
@@ -375,7 +377,7 @@ class _$Initial implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(String token) success,
     required TResult Function() error,
   }) {
     return initial();
@@ -386,7 +388,7 @@ class _$Initial implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String token)? success,
     TResult Function()? error,
   }) {
     return initial?.call();
@@ -397,7 +399,7 @@ class _$Initial implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String token)? success,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -489,7 +491,7 @@ class _$Loading implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(String token) success,
     required TResult Function() error,
   }) {
     return loading();
@@ -500,7 +502,7 @@ class _$Loading implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String token)? success,
     TResult Function()? error,
   }) {
     return loading?.call();
@@ -511,7 +513,7 @@ class _$Loading implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String token)? success,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -567,6 +569,7 @@ abstract class Loading implements AuthState {
 abstract class $SuccessCopyWith<$Res> {
   factory $SuccessCopyWith(Success value, $Res Function(Success) then) =
       _$SuccessCopyWithImpl<$Res>;
+  $Res call({String token});
 }
 
 /// @nodoc
@@ -577,36 +580,58 @@ class _$SuccessCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 
   @override
   Success get _value => super._value as Success;
+
+  @override
+  $Res call({
+    Object? token = freezed,
+  }) {
+    return _then(Success(
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$Success implements Success {
-  const _$Success();
+  const _$Success({required this.token});
+
+  @override
+  final String token;
 
   @override
   String toString() {
-    return 'AuthState.success()';
+    return 'AuthState.success(token: $token)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is Success);
+        (other.runtimeType == runtimeType &&
+            other is Success &&
+            (identical(other.token, token) || other.token == token));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, token);
+
+  @JsonKey(ignore: true)
+  @override
+  $SuccessCopyWith<Success> get copyWith =>
+      _$SuccessCopyWithImpl<Success>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(String token) success,
     required TResult Function() error,
   }) {
-    return success();
+    return success(token);
   }
 
   @override
@@ -614,10 +639,10 @@ class _$Success implements Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String token)? success,
     TResult Function()? error,
   }) {
-    return success?.call();
+    return success?.call(token);
   }
 
   @override
@@ -625,12 +650,12 @@ class _$Success implements Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String token)? success,
     TResult Function()? error,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success();
+      return success(token);
     }
     return orElse();
   }
@@ -674,7 +699,11 @@ class _$Success implements Success {
 }
 
 abstract class Success implements AuthState {
-  const factory Success() = _$Success;
+  const factory Success({required String token}) = _$Success;
+
+  String get token;
+  @JsonKey(ignore: true)
+  $SuccessCopyWith<Success> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -717,7 +746,7 @@ class _$Error implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function(String token) success,
     required TResult Function() error,
   }) {
     return error();
@@ -728,7 +757,7 @@ class _$Error implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String token)? success,
     TResult Function()? error,
   }) {
     return error?.call();
@@ -739,7 +768,7 @@ class _$Error implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function(String token)? success,
     TResult Function()? error,
     required TResult orElse(),
   }) {

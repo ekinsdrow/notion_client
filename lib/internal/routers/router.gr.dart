@@ -37,8 +37,10 @@ class AppRouter extends _i5.RootStackRouter {
           routeData: routeData, child: const _i3.AuthPage());
     },
     MainRoute.name: (routeData) {
+      final args = routeData.argsAs<MainRouteArgs>();
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i4.MainPage());
+          routeData: routeData,
+          child: _i4.MainPage(key: args.key, token: args.token));
     }
   };
 
@@ -77,8 +79,23 @@ class AuthRoute extends _i5.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.MainPage]
-class MainRoute extends _i5.PageRouteInfo<void> {
-  const MainRoute() : super(MainRoute.name, path: '/main');
+class MainRoute extends _i5.PageRouteInfo<MainRouteArgs> {
+  MainRoute({_i6.Key? key, required String token})
+      : super(MainRoute.name,
+            path: '/main', args: MainRouteArgs(key: key, token: token));
 
   static const String name = 'MainRoute';
+}
+
+class MainRouteArgs {
+  const MainRouteArgs({this.key, required this.token});
+
+  final _i6.Key? key;
+
+  final String token;
+
+  @override
+  String toString() {
+    return 'MainRouteArgs{key: $key, token: $token}';
+  }
 }

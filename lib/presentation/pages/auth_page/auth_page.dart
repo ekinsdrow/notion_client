@@ -1,4 +1,5 @@
-import 'package:auto_route/src/router/auto_router_x.dart';
+import 'package:auto_route/auto_route.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notion_client/domain/blocs/auth_bloc/auth_bloc.dart';
@@ -54,15 +55,17 @@ class _AuthPageState extends State<AuthPage> {
                 _loadingBloc = true;
               });
             },
-            success: () {
+            success: (token) {
               context.router.replaceAll(
                 [
-                  const MainRoute(),
+                   MainRoute(
+                     token: token,
+                   ),
                 ],
               );
             },
             error: () {
-              //TODO: handle error
+              //TODO(Ivan): handle error
             },
           ),
           child: Scaffold(

@@ -1,4 +1,4 @@
-import 'package:auto_route/src/router/auto_router_x.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:notion_client/generated/l10n.dart';
 import 'package:notion_client/internal/routers/router.gr.dart';

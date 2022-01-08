@@ -35,7 +35,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
         await tokenRepository.saveToken(token: auth.accessToken);
 
-        emit(const Success());
+        emit(
+          Success(
+            token: auth.accessToken,
+          ),
+        );
       } on Exception {
         emit(
           const Error(),
