@@ -5,7 +5,6 @@ import 'package:notion_client/internal/routers/router.gr.dart';
 import 'package:notion_client/presentation/pages/welcome_page/first_page.dart';
 import 'package:notion_client/presentation/pages/welcome_page/second_page.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
-import 'package:notion_client/presentation/theme/theme.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
