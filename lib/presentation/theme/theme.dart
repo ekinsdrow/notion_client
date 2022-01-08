@@ -60,6 +60,9 @@ class AppTheme {
         appBarTheme: AppBarTheme(
           backgroundColor: backgroundColor,
           elevation: 0,
+          iconTheme: IconThemeData(
+            color: textColor,
+          ),
         ),
         scaffoldBackgroundColor: backgroundColor,
         primaryColor: primaryColor,

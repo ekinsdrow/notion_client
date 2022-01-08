@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:notion_client/presentation/pages/pages.dart';
-
+import 'package:notion_client/presentation/pages/auth_page/auth_page.dart';
+import 'package:notion_client/presentation/pages/main_page/main_page.dart';
+import 'package:notion_client/presentation/pages/splash_page.dart';
+import 'package:notion_client/presentation/pages/welcome_page/welcome_page.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
@@ -14,7 +16,14 @@ import 'package:notion_client/presentation/pages/pages.dart';
       path: '/welcome_route',
       page: WelcomePage,
     ),
+    AutoRoute<dynamic>(
+      path: '/auth',
+      page: AuthPage,
+    ),
+    AutoRoute<dynamic>(
+      path: '/main',
+      page: MainPage,
+    ),
   ],
 )
-
 class $AppRouter {}
