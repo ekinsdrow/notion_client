@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "hello_header": MessageLookupByLibrary.simpleMessage(
             "Привет, мы рады, что ты с нами!"),
+        "hello_header_2":
+            MessageLookupByLibrary.simpleMessage("Добро пожаловать!"),
         "lorem_ipsum": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ."),
         "next": MessageLookupByLibrary.simpleMessage("Продолжить"),
