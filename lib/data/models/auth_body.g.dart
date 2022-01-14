@@ -6,14 +6,15 @@ part of 'auth_body.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-AuthBody _$AuthBodyFromJson(Map<String, dynamic> json) => AuthBody(
-      code: json['code'] as String,
+_$_AuthBody _$$_AuthBodyFromJson(Map<String, dynamic> json) => _$_AuthBody(
       redirectUri: json['redirect_uri'] as String,
       grantType: json['grant_type'] as String? ?? 'authorization_code',
+      code: json['code'] as String,
     );
 
-Map<String, dynamic> _$AuthBodyToJson(AuthBody instance) => <String, dynamic>{
+Map<String, dynamic> _$$_AuthBodyToJson(_$_AuthBody instance) =>
+    <String, dynamic>{
+      'redirect_uri': instance.redirectUri,
       'grant_type': instance.grantType,
       'code': instance.code,
-      'redirect_uri': instance.redirectUri,
     };

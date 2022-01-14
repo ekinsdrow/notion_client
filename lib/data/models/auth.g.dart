@@ -6,10 +6,10 @@ part of 'auth.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Auth _$AuthFromJson(Map<String, dynamic> json) => Auth(
+_$_Auth _$$_AuthFromJson(Map<String, dynamic> json) => _$_Auth(
       accessToken: json['access_token'] as String,
     );
 
-Map<String, dynamic> _$AuthToJson(Auth instance) => <String, dynamic>{
+Map<String, dynamic> _$$_AuthToJson(_$_Auth instance) => <String, dynamic>{
       'access_token': instance.accessToken,
     };
