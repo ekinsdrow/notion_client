@@ -1,15 +1,13 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'auth.freezed.dart';
 part 'auth.g.dart';
 
-@JsonSerializable()
-class Auth {
-  Auth({
-    required this.accessToken,
-  });
-
-  @JsonKey(name: 'access_token')
-  final String accessToken;
+@freezed
+class Auth with _$Auth {
+  factory Auth({
+    @JsonKey(name: 'access_token') required String accessToken,
+  }) = _Auth;
 
   factory Auth.fromJson(Map<String, dynamic> json) => _$AuthFromJson(json);
-  Map<String, dynamic> toJson() => _$AuthToJson(this);
 }
