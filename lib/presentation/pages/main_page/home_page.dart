@@ -14,16 +14,21 @@ class HomePage extends StatelessWidget {
           horizontal: paddingsMedium,
         ),
         child: Column(
-          children: [
-            Text(
-              S.of(context).hello_header_2,
-              style: Theme.of(context).textTheme.headline3!.copyWith(
-                    color: AppTheme.textColor,
-                  ),
-            )
+          children: const [
+            _Top(),
           ],
         ),
       ),
     );
+  }
+}
+
+class _Top extends StatelessWidget {
+  const _Top({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    //TODO(ANYA): create top of widget
+    return Container();
   }
 }
