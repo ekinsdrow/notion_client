@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notion_client/generated/l10n.dart';
+import 'package:notion_client/presentation/components/horizontal_pages_listview.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
-import 'package:notion_client/presentation/theme/theme.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,6 +16,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: const [
             _Top(),
+            _Fav(),
           ],
         ),
       ),
@@ -30,5 +31,26 @@ class _Top extends StatelessWidget {
   Widget build(BuildContext context) {
     //TODO(ANYA): create top of widget
     return Container();
+  }
+}
+
+class _Fav extends StatelessWidget {
+  const _Fav({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          S.of(context).fav,
+          style: Theme.of(context).textTheme.headline4,
+        ),
+        const SizedBox(
+          height: 24,
+        ),
+        const HorizontalPagesListView(),
+      ],
+    );
   }
 }

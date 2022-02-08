@@ -50,6 +50,16 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Favorites`
+  String get fav {
+    return Intl.message(
+      'Favorites',
+      name: 'fav',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Hello, we are glad that you are with us!`
   String get hello_header {
     return Intl.message(
