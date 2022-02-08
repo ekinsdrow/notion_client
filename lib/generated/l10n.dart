@@ -110,6 +110,16 @@ class S {
     );
   }
 
+  /// `Pages list`
+  String get pages_list {
+    return Intl.message(
+      'Pages list',
+      name: 'pages_list',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sign in`
   String get sign_in {
     return Intl.message(
