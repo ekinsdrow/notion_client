@@ -18,10 +18,6 @@ class _HorizontalPagesListViewState extends State<HorizontalPagesListView> {
       final max = notification.metrics.maxScrollExtent;
       final now = notification.metrics.pixels;
       _lineLeft = (now / max * 100) * 1.5;
-
-      print('LEFT $_lineLeft');
-      print('MAX $max');
-      print('NOW $now');
     });
 
     return true;
