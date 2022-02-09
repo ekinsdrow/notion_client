@@ -8,4 +8,6 @@ class SvgPath {
   static const String home = 'assets/images/svg/home.svg';
   static const String add = 'assets/images/svg/add.svg';
   static const String logo = 'assets/images/svg/logo.svg';
+  static const String settings = 'assets/images/svg/settings.svg';
+  static const String search = 'assets/images/svg/search.svg';
 }
