@@ -25,7 +25,7 @@ class AppScope extends StatelessWidget {
     dio.interceptors.add(
       DioRequestInterceptor(),
     );
-    
+
     const secureStorage = FlutterSecureStorage();
 
     final notionClient = NotionClient(
@@ -42,6 +42,7 @@ class AppScope extends StatelessWidget {
       ),
     );
 
+    //TODO: replace providers to other scopes
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider<AuthRepository>.value(

@@ -109,10 +109,10 @@ class _Header extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
-                'Добро пожаловать!',
+              Text(
+                S.of(context).welcome,
                 textAlign: TextAlign.left,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -120,7 +120,7 @@ class _Header extends StatelessWidget {
                 child: InkWell(
                   borderRadius: BorderRadius.circular(100),
                   onTap: () {
-                    //TODO:openSettinbgs
+                    //TODO: open Settings
                   },
                   child: Container(
                     color: Colors.transparent,
@@ -177,7 +177,7 @@ class _Search extends StatelessWidget {
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: const Color(0xFFFBFAFA),
-                    hintText: 'Поиск',
+                    hintText: S.of(context).search,
                     prefixIcon: Padding(
                       padding: const EdgeInsets.only(
                         left: 20,
