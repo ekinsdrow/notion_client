@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "fav": MessageLookupByLibrary.simpleMessage("Favorites"),
         "hello_header": MessageLookupByLibrary.simpleMessage(
             "Hello, we are glad that you are with us!"),
         "hello_header_2": MessageLookupByLibrary.simpleMessage("Welcome!"),
@@ -29,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ."),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "open_notion": MessageLookupByLibrary.simpleMessage("Open notion.so"),
+        "pages_list": MessageLookupByLibrary.simpleMessage("Pages list"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
         "token": MessageLookupByLibrary.simpleMessage("Token"),
         "welcome_text_1": MessageLookupByLibrary.simpleMessage(
