@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:notion_client/data/repositories/token_repository.dart';
-import 'package:notion_client/internal/routers/router.gr.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:notion_client/internal/routers/router.gr.dart';
+import 'package:notion_client/presentation/assets_paths/resources.dart';
+import 'package:notion_client/presentation/theme/theme.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({
@@ -14,18 +15,48 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          child: const Text('Logout'),
-          onPressed: () async {
-            await context.read<TokenRepository>().deleteToken();
-
-            context.router.replaceAll([
-              const WelcomeRoute(),
-            ]);
-          },
+    return AutoTabsScaffold(
+      routes: const [
+        HomeRouter(),
+        ProfileRouter(),
+      ],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: SvgPicture.asset(
+          SvgPath.add,
         ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBuilder: (context, tabsRouter) => BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              SvgPath.home,
+            ),
+            activeIcon: SvgPicture.asset(
+              SvgPath.home,
+              color: AppTheme.primaryColor,
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              SvgPath.user,
+            ),
+            activeIcon: SvgPicture.asset(
+              SvgPath.user,
+              color: AppTheme.primaryColor,
+            ),
+            label: '',
+          ),
+        ],
+        currentIndex: tabsRouter.activeIndex,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        type: BottomNavigationBarType.fixed,
+        onTap: (final index) {
+          tabsRouter.setActiveIndex(index);
+        },
       ),
     );
   }

@@ -66,5 +66,18 @@ class AppTheme {
         ),
         scaffoldBackgroundColor: backgroundColor,
         primaryColor: primaryColor,
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: backgroundColor,
+          elevation: 0,
+          selectedIconTheme: IconThemeData(
+            color: primaryColor,
+          ),
+          unselectedIconTheme: IconThemeData(
+            color: textColor,
+          ),
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: primaryColor,
+        ),
       );
 }
