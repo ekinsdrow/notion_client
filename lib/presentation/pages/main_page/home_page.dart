@@ -39,7 +39,7 @@ class _Top extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(
-            height: paddingsAbove,
+            height: paddingsTopPage,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,17 +65,16 @@ class _Top extends StatelessWidget {
             ],
           ),
           const SizedBox(
-            height: paddingsBetween,
+            height: paddingsBetweenElem,
           ),
           Container(
-            decoration: const BoxDecoration(
-              boxShadow: [BoxShadow(
+            decoration: const BoxDecoration(boxShadow: [
+              BoxShadow(
                 color: Color(0xFFE2E2E2),
-                blurRadius: 25,
-                offset: Offset(0,10),
+                blurRadius: 20,
+                offset: Offset(0, 8),
               ),
-             ]
-            ),
+            ]),
             child: Builder(builder: (context) {
               const border = OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(40)),
@@ -86,7 +85,11 @@ class _Top extends StatelessWidget {
                   filled: true,
                   fillColor: const Color(0xFFFBFAFA),
                   hintText: 'Поиск',
-                  prefix: SvgPicture.asset(SvgPath.search),
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.only(
+                        left: 20, top: 20, bottom: 20, right: 15),
+                    child: SvgPicture.asset(SvgPath.search),
+                  ),
                   hintStyle: const TextStyle(color: Color(0xFFC4C4C4)),
                   enabledBorder: border,
                   errorBorder: border,
