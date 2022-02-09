@@ -29,6 +29,9 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
+                SizedBox(
+                  height: paddingsBetweenElem + 20,
+                ),
                 _Fav(),
                 SizedBox(
                   height: paddingsBetweenElem + 20,
@@ -211,9 +214,6 @@ class _Fav extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(
-          height: paddingsBetweenElem,
-        ),
         Container(
           padding: const EdgeInsets.symmetric(
             horizontal: paddingsBetweenElem,

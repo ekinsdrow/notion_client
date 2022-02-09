@@ -8,6 +8,7 @@ import 'package:notion_client/data/repositories/auth_repository_impl.dart';
 import 'package:notion_client/data/clients/notion_client.dart';
 import 'package:notion_client/data/repositories/token_repository.dart';
 import 'package:notion_client/data/repositories/token_repository_impl.dart';
+import 'package:notion_client/internal/network/dio_request_interceptor.dart';
 
 class AppScope extends StatelessWidget {
   const AppScope({
@@ -20,6 +21,11 @@ class AppScope extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dio = Dio();
+
+    dio.interceptors.add(
+      DioRequestInterceptor(),
+    );
+    
     const secureStorage = FlutterSecureStorage();
 
     final notionClient = NotionClient(
