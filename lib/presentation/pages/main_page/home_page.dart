@@ -20,8 +20,8 @@ class HomePage extends StatelessWidget {
           SliverPersistentHeader(
             pinned: true,
             delegate: _SearchSliverPersistentHeaderDelegate(
-              max: 107,
-              min: 107,
+              max: 75,
+              min: 75,
               child: const _Search(),
             ),
           ),
@@ -113,15 +113,20 @@ class _Header extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  color: Colors.transparent,
-                  alignment: Alignment.center,
-                  width: 40,
-                  height: 40,
-                  child: SvgPicture.asset(
-                    SvgPath.settings,
+              ClipOval(
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(100),
+                  onTap: () {
+                    //TODO:openSettinbgs
+                  },
+                  child: Container(
+                    color: Colors.transparent,
+                    alignment: Alignment.center,
+                    width: 40,
+                    height: 40,
+                    child: SvgPicture.asset(
+                      SvgPath.settings,
+                    ),
                   ),
                 ),
               ),
@@ -192,9 +197,6 @@ class _Search extends StatelessWidget {
               },
             ),
           ),
-          const SizedBox(
-            height: paddingsBetweenElem,
-          ),
         ],
       ),
     );
@@ -209,6 +211,9 @@ class _Fav extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const SizedBox(
+          height: paddingsBetweenElem,
+        ),
         Container(
           padding: const EdgeInsets.symmetric(
             horizontal: paddingsBetweenElem,
