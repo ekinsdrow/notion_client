@@ -32,6 +32,9 @@ class _HorizontalPagesListViewState extends State<HorizontalPagesListView> {
           child: NotificationListener<ScrollNotification>(
             onNotification: _scrollNotification,
             child: ListView.separated(
+              padding: const EdgeInsets.symmetric(
+                horizontal: paddingsBetweenElem,
+              ),
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => UnconstrainedBox(
                 child: Container(
