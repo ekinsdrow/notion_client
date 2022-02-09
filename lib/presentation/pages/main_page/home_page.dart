@@ -43,41 +43,59 @@ class _Top extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text('Добро пожаловать!',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(fontWeight: FontWeight.bold)),
+              const Text(
+                'Добро пожаловать!',
+                textAlign: TextAlign.left,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               GestureDetector(
-                  //onTap: хз что тут вызвать
-                  child: Container(
-                      color: Colors.transparent,
-                      alignment: Alignment.center,
-                      width: 40,
-                      height: 40,
-                      child: SvgPicture.asset(
-                        SvgPath.settings,
-                      )))
+                onTap: () {},
+                child: Container(
+                  color: Colors.transparent,
+                  alignment: Alignment.center,
+                  width: 40,
+                  height: 40,
+                  child: SvgPicture.asset(
+                    SvgPath.settings,
+                  ),
+                ),
+              ),
             ],
           ),
           const SizedBox(
             height: paddingsBetween,
           ),
-          Material(
-            child: TextField(
-              decoration: InputDecoration(
+          Container(
+            decoration: const BoxDecoration(
+              boxShadow: [BoxShadow(
+                color: Color(0xFFE2E2E2),
+                blurRadius: 25,
+                offset: Offset(0,10),
+              ),
+             ]
+            ),
+            child: Builder(builder: (context) {
+              const border = OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(40)),
+                borderSide: BorderSide(color: Color(0x00000000)),
+              );
+              return TextField(
+                decoration: InputDecoration(
                   filled: true,
                   fillColor: const Color(0xFFFBFAFA),
                   hintText: 'Поиск',
                   prefix: SvgPicture.asset(SvgPath.search),
                   hintStyle: const TextStyle(color: Color(0xFFC4C4C4)),
-                  focusedBorder: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(40)),
-                    borderSide: BorderSide(color: Color(0x00000000)),
-                  )),
-            ),
-            elevation: 16.0,
-            shadowColor: const Color(0xFFE2E2E2),
+                  enabledBorder: border,
+                  errorBorder: border,
+                  border: border,
+                  disabledBorder: border,
+                  focusedBorder: border,
+                ),
+              );
+            }),
           )
         ],
       ),
