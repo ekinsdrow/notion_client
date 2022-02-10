@@ -1,10 +1,13 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:notion_client/generated/l10n.dart';
+import 'package:notion_client/internal/routers/router.gr.dart';
 import 'package:notion_client/presentation/components/horizontal_pages_listview.dart';
 import 'package:notion_client/presentation/assets_paths/resources.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
 import 'package:notion_client/presentation/widgets/page_listview_item.dart';
+import 'package:notion_client/presentation/widgets/search_input.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -148,48 +151,17 @@ class _Search extends StatelessWidget {
           const SizedBox(
             height: paddingsMedium,
           ),
-          Container(
-            decoration: const BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Color(0xFFE2E2E2),
-                  blurRadius: 20,
-                  offset: Offset(0, 8),
-                ),
-              ],
-            ),
-            child: Builder(
-              builder: (context) {
-                const border = OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(40)),
-                  borderSide: BorderSide(color: Color(0x00000000)),
-                );
-
-                return TextField(
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: const Color(0xFFFBFAFA),
-                    hintText: 'Поиск',
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.only(
-                        left: 20,
-                        top: 20,
-                        bottom: 20,
-                        right: 15,
-                      ),
-                      child: SvgPicture.asset(SvgPath.search),
-                    ),
-                    hintStyle: const TextStyle(
-                      color: Color(0xFFC4C4C4),
-                    ),
-                    enabledBorder: border,
-                    errorBorder: border,
-                    border: border,
-                    disabledBorder: border,
-                    focusedBorder: border,
-                  ),
-                );
-              },
+          GestureDetector(
+            onTap: () {
+              context.router.push(
+                const SearchRoute(),
+              );
+            },
+            child: Container(
+              color: Colors.transparent,
+              child: const IgnorePointer(
+                child: SearchInput(),
+              ),
             ),
           ),
           const SizedBox(

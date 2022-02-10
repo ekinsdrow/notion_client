@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notion_client/generated/l10n.dart';
+import 'package:notion_client/presentation/theme/back_button.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
 
 class SecondPage extends StatelessWidget {
@@ -20,17 +21,8 @@ class SecondPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          GestureDetector(
-            onTap: backButtonCallback,
-            child: Container(
-              color: Colors.transparent,
-              alignment: Alignment.centerLeft,
-              width: 40,
-              height: 40,
-              child: const Icon(
-                Icons.arrow_back_ios,
-              ),
-            ),
+          BackButtonWidget(
+            callback: backButtonCallback,
           ),
           const SizedBox(
             height: paddingsMedium,
