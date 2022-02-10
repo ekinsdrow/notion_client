@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:notion_client/data/constants.dart';
 import 'package:notion_client/data/models/auth.dart';
 import 'package:notion_client/data/models/auth_body.dart';
+import 'package:notion_client/data/models/base_list.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'notion_client.g.dart';
@@ -13,6 +14,11 @@ abstract class NotionClient {
   @POST('oauth/token')
   Future<Auth> getToken({
     @Body() required AuthBody authBody,
-    @Header('Authorization') required String token
+    @Header('Authorization') required String token,
+  });
+
+  @POST('search')
+  Future<BaseList> getAllUserPages({
+    @Header('Authorization') required String token,
   });
 }

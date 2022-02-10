@@ -6,9 +6,12 @@ import 'package:notion_client/data/clients/token_client.dart';
 import 'package:notion_client/data/repositories/auth_repository.dart';
 import 'package:notion_client/data/repositories/auth_repository_impl.dart';
 import 'package:notion_client/data/clients/notion_client.dart';
+import 'package:notion_client/data/repositories/pages_repository.dart';
 import 'package:notion_client/data/repositories/token_repository.dart';
 import 'package:notion_client/data/repositories/token_repository_impl.dart';
 import 'package:notion_client/internal/network/dio_request_interceptor.dart';
+
+import '../../data/repositories/pages_repository_impl.dart';
 
 class AppScope extends StatelessWidget {
   const AppScope({
@@ -35,6 +38,9 @@ class AppScope extends StatelessWidget {
     final authRepository = AuthRepositoryImpl(
       notionClient: notionClient,
     );
+    final pagesRepository = PagesRepositoryImpl(
+      notionClient: notionClient,
+    );
 
     final tokenRepository = TokenRepositoryImpl(
       tokenClient: TokenClient(
@@ -50,6 +56,9 @@ class AppScope extends StatelessWidget {
         ),
         RepositoryProvider<TokenRepository>.value(
           value: tokenRepository,
+        ),
+        RepositoryProvider<PagesRepository>.value(
+          value: pagesRepository,
         ),
       ],
       child: child,
