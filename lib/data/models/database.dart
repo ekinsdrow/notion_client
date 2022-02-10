@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:notion_client/data/models/rich_text.dart';
 import 'emoji_icon.dart';
 import 'interfaces/base_object.dart';
 part 'database.g.dart';
@@ -9,6 +10,7 @@ class Database implements BaseObject {
     required this.object,
     required this.id,
     required this.icon,
+    required this.richTextTitle,
   });
 
   @override
@@ -21,8 +23,12 @@ class Database implements BaseObject {
   final EmojiIcon? icon;
 
   @override
-  // TODO: implement title
-  String get title => throw UnimplementedError();
+  String get title => richTextTitle.first.plainText;
+
+
+  @JsonKey(name: 'title')
+  final List<RichText> richTextTitle;
+
 
   factory Database.fromJson(Map<String, dynamic> json) => _$DatabaseFromJson(json);
 

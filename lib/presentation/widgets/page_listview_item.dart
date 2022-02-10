@@ -41,8 +41,8 @@ class PageListViewItem extends StatelessWidget {
                 const SizedBox(
                   width: 18,
                 ),
-                const Text(
-                  'Дом',
+                Text(
+                  object.title,
                 ),
               ],
             ),

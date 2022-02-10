@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:notion_client/data/models/emoji_icon.dart';
+import 'package:notion_client/data/models/page_properties.dart';
 
 import 'interfaces/base_object.dart';
 part 'page.g.dart';
@@ -10,6 +11,7 @@ class Page implements BaseObject {
     required this.icon,
     required this.id,
     required this.object,
+    required this.pageProperties,
   });
 
   @override
@@ -22,10 +24,21 @@ class Page implements BaseObject {
   final EmojiIcon? icon;
 
   @override
-  // TODO: implement title
-  String get title => throw UnimplementedError();
+  String get title {
+    if (pageProperties.title != null) {
+      if (pageProperties.title!.isNotEmpty) {
+        return pageProperties.title!.first.plainText;
+      }
+    }
+    return '';
+  }
 
-  factory Page.fromJson(Map<String, dynamic> json) => _$PageFromJson(json);
+  @JsonKey(name: 'properties')
+  final PageProperties pageProperties;
+
+  factory Page.fromJson(Map<String, dynamic> json) {
+    return _$PageFromJson(json);
+  }
 
   Map<String, dynamic> toJson() => _$PageToJson(this);
 }

@@ -32,9 +32,7 @@ class SearchList implements BaseList {
       if (v['object'] == 'page') {
         results.add(Page.fromJson(v));
       } else if (v['object'] == 'database') {
-        if (v['object'] == 'page') {
-          results.add(Database.fromJson(v));
-        }
+        results.add(Database.fromJson(v));
       }
     }
 
