@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:notion_client/data/models/base_object.dart';
 import 'package:notion_client/data/models/emoji_icon.dart';
+
+import 'interfaces/base_object.dart';
 part 'page.g.dart';
 
 @JsonSerializable()

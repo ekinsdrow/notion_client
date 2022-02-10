@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:notion_client/data/models/base_object.dart';
 import 'package:notion_client/presentation/assets_paths/resources.dart';
+
+import '../../data/models/interfaces/base_object.dart';
 
 class PageListViewItem extends StatelessWidget {
   const PageListViewItem({

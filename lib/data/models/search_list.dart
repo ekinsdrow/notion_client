@@ -1,7 +1,8 @@
-import 'package:notion_client/data/models/base_list.dart';
-import 'package:notion_client/data/models/base_object.dart';
 import 'package:notion_client/data/models/database.dart';
 import 'package:notion_client/data/models/page.dart';
+
+import 'interfaces/base_list.dart';
+import 'interfaces/base_object.dart';
 
 class SearchList implements BaseList {
   SearchList({

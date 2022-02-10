@@ -1,4 +1,4 @@
-import 'package:notion_client/data/models/base_object.dart';
+import 'base_object.dart';
 
 abstract class BaseList {
   String get object;
