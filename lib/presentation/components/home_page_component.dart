@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:notion_client/data/models/base_list.dart';
 import 'package:notion_client/generated/l10n.dart';
 import 'package:notion_client/internal/routers/router.gr.dart';
 import 'package:notion_client/presentation/assets_paths/resources.dart';
@@ -10,7 +11,12 @@ import 'package:notion_client/presentation/widgets/page_listview_item.dart';
 import 'package:notion_client/presentation/widgets/search_input.dart';
 
 class HomePageComponent extends StatelessWidget {
-  const HomePageComponent({Key? key}) : super(key: key);
+  const HomePageComponent({
+    required this.baseList,
+    Key? key,
+  }) : super(key: key);
+
+  final BaseList baseList;
 
   @override
   Widget build(BuildContext context) {
@@ -50,14 +56,16 @@ class HomePageComponent extends StatelessWidget {
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) => Column(
-                  children: const [
-                    PageListViewItem(),
-                    SizedBox(
+                  children: [
+                    PageListViewItem(
+                      object: baseList.results[index],
+                    ),
+                    const SizedBox(
                       height: paddingsMedium,
                     ),
                   ],
                 ),
-                childCount: 20,
+                childCount: baseList.results.length,
               ),
             ),
           ),

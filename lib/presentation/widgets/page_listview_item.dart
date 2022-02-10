@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:notion_client/data/models/base_object.dart';
 import 'package:notion_client/presentation/assets_paths/resources.dart';
 
 class PageListViewItem extends StatelessWidget {
   const PageListViewItem({
     Key? key,
-
+    required this.object,
   }) : super(key: key);
 
+  final BaseObject object;
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +31,9 @@ class PageListViewItem extends StatelessWidget {
                 const SizedBox(
                   width: 10,
                 ),
-                const Text(
-                  '🥺',
-                  style: TextStyle(
+                Text(
+                  object.icon != null ? object.icon!.emoji : '📄',
+                  style: const TextStyle(
                     fontSize: 25,
                   ),
                 ),

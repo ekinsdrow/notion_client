@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notion_client/internal/di/home_page_scope.dart';
 import 'package:notion_client/presentation/components/home_page_component.dart';
 import 'package:notion_client/presentation/models/auth_token.dart';
-import 'package:notion_client/presentation/theme/paddings.dart';
 import 'package:notion_client/presentation/widgets/loader.dart';
 import 'package:provider/provider.dart';
 
@@ -18,12 +17,6 @@ class HomePage extends StatelessWidget {
     return HomePageScope(
       child: BlocBuilder<HomePageBloc, HomePageState>(
         builder: (context, state) {
-          if (state is Loading) {
-            return const Center(
-              child: Loader(),
-            );
-          }
-
           if (state is Error) {
             return Center(
               child: RetryErrorWidget(
@@ -42,7 +35,15 @@ class HomePage extends StatelessWidget {
             );
           }
 
-          return const HomePageComponent();
+          if (state is Success) {
+            return HomePageComponent(
+              baseList: state.result,
+            );
+          }
+
+          return const Center(
+            child: Loader(),
+          );
         },
       ),
     );

@@ -54,18 +54,21 @@ class _AuthPageState extends State<AuthPage> {
               setState(() {
                 _loadingBloc = true;
               });
+
             },
             success: (token) {
               context.router.replaceAll(
                 [
-                   MainRoute(
-                     token: token,
-                   ),
+                  MainRoute(
+                    token: token,
+                  ),
                 ],
               );
+
             },
             error: () {
               //TODO(Ivan): handle error
+
             },
           ),
           child: Scaffold(
