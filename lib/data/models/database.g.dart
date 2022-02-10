@@ -7,8 +7,8 @@ part of 'database.dart';
 // **************************************************************************
 
 Database _$DatabaseFromJson(Map<String, dynamic> json) => Database(
-      id: json['id'] as String,
       object: json['object'] as String,
+      id: json['id'] as String,
       icon: json['icon'] == null
           ? null
           : EmojiIcon.fromJson(json['icon'] as Map<String, dynamic>),

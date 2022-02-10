@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
 
           if (state is Success) {
             return HomePageComponent(
-              baseList: state.result,
+              searchList: state.result,
             );
           }
 

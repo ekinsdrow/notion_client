@@ -2,8 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:notion_client/data/constants.dart';
 import 'package:notion_client/data/models/auth.dart';
 import 'package:notion_client/data/models/auth_body.dart';
-import 'package:notion_client/data/models/base_list.dart';
 import 'package:retrofit/retrofit.dart';
+
+import '../models/search_list.dart';
 
 part 'notion_client.g.dart';
 
@@ -18,7 +19,7 @@ abstract class NotionClient {
   });
 
   @POST('search')
-  Future<BaseList> getAllUserPages({
+  Future<SearchList> getAllUserPages({
     @Header('Authorization') required String token,
   });
 }

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:notion_client/data/models/base_list.dart';
+import 'package:notion_client/data/models/search_list.dart';
 import 'package:notion_client/data/repositories/pages_repository.dart';
 
 part 'home_page_event.dart';

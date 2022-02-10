@@ -1,5 +1,5 @@
-import 'package:notion_client/data/models/base_list.dart';
+import 'package:notion_client/data/models/search_list.dart';
 
 abstract class PagesRepository {
-  Future<BaseList> getAllPages({required String token});
+  Future<SearchList> getAllPages({required String token});
 }

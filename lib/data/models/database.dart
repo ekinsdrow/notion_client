@@ -5,19 +5,27 @@ import 'emoji_icon.dart';
 part 'database.g.dart';
 
 @JsonSerializable()
-class Database extends BaseObject {
+class Database implements BaseObject {
   Database({
-    required String id,
-    required String object,
-    required EmojiIcon? icon,
-  }) : super(
-          id: id,
-          object: object,
-          icon: icon,
-        );
+    required this.object,
+    required this.id,
+    required this.icon,
+  });
+
+  @override
+  final String id;
+
+  @override
+  final String object;
+
+  @override
+  final EmojiIcon? icon;
+
+  @override
+  // TODO: implement title
+  String get title => throw UnimplementedError();
 
   factory Database.fromJson(Map<String, dynamic> json) => _$DatabaseFromJson(json);
-  
-  @override
+
   Map<String, dynamic> toJson() => _$DatabaseToJson(this);
 }

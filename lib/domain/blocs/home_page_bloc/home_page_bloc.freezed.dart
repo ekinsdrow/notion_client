@@ -233,7 +233,7 @@ class _$HomePageStateTearOff {
     return const Loading();
   }
 
-  Success success({required BaseList result}) {
+  Success success({required SearchList result}) {
     return Success(
       result: result,
     );
@@ -254,21 +254,21 @@ mixin _$HomePageState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(BaseList result) success,
+    required TResult Function(SearchList result) success,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(BaseList result)? success,
+    TResult Function(SearchList result)? success,
     TResult Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(BaseList result)? success,
+    TResult Function(SearchList result)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -353,7 +353,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(BaseList result) success,
+    required TResult Function(SearchList result) success,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -363,7 +363,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(BaseList result)? success,
+    TResult Function(SearchList result)? success,
     TResult Function(String error)? error,
   }) {
     return loading?.call();
@@ -373,7 +373,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(BaseList result)? success,
+    TResult Function(SearchList result)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -426,7 +426,7 @@ abstract class Loading implements HomePageState {
 abstract class $SuccessCopyWith<$Res> {
   factory $SuccessCopyWith(Success value, $Res Function(Success) then) =
       _$SuccessCopyWithImpl<$Res>;
-  $Res call({BaseList result});
+  $Res call({SearchList result});
 }
 
 /// @nodoc
@@ -446,7 +446,7 @@ class _$SuccessCopyWithImpl<$Res> extends _$HomePageStateCopyWithImpl<$Res>
       result: result == freezed
           ? _value.result
           : result // ignore: cast_nullable_to_non_nullable
-              as BaseList,
+              as SearchList,
     ));
   }
 }
@@ -457,7 +457,7 @@ class _$Success implements Success {
   const _$Success({required this.result});
 
   @override
-  final BaseList result;
+  final SearchList result;
 
   @override
   String toString() {
@@ -484,7 +484,7 @@ class _$Success implements Success {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(BaseList result) success,
+    required TResult Function(SearchList result) success,
     required TResult Function(String error) error,
   }) {
     return success(result);
@@ -494,7 +494,7 @@ class _$Success implements Success {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(BaseList result)? success,
+    TResult Function(SearchList result)? success,
     TResult Function(String error)? error,
   }) {
     return success?.call(result);
@@ -504,7 +504,7 @@ class _$Success implements Success {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(BaseList result)? success,
+    TResult Function(SearchList result)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -550,9 +550,9 @@ class _$Success implements Success {
 }
 
 abstract class Success implements HomePageState {
-  const factory Success({required BaseList result}) = _$Success;
+  const factory Success({required SearchList result}) = _$Success;
 
-  BaseList get result;
+  SearchList get result;
   @JsonKey(ignore: true)
   $SuccessCopyWith<Success> get copyWith => throw _privateConstructorUsedError;
 }
@@ -619,7 +619,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(BaseList result) success,
+    required TResult Function(SearchList result) success,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -629,7 +629,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(BaseList result)? success,
+    TResult Function(SearchList result)? success,
     TResult Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -639,7 +639,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(BaseList result)? success,
+    TResult Function(SearchList result)? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {

@@ -4,20 +4,27 @@ import 'package:notion_client/data/models/emoji_icon.dart';
 part 'page.g.dart';
 
 @JsonSerializable()
-class Page extends BaseObject {
+class Page implements BaseObject {
   Page({
-    required String id,
-    required String object,
-    required EmojiIcon? icon,
-  }) : super(
-          id: id,
-          object: object,
-          icon: icon,
-        );
+    required this.icon,
+    required this.id,
+    required this.object,
+  });
 
+  @override
+  final String id;
+
+  @override
+  final String object;
+
+  @override
+  final EmojiIcon? icon;
+
+  @override
+  // TODO: implement title
+  String get title => throw UnimplementedError();
 
   factory Page.fromJson(Map<String, dynamic> json) => _$PageFromJson(json);
-  
-  @override
+
   Map<String, dynamic> toJson() => _$PageToJson(this);
 }
