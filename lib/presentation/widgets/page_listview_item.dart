@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:notion_client/domain/use_cases/base_graph.dart';
+import 'package:notion_client/domain/use_cases/workspace_graph.dart';
 import 'package:notion_client/presentation/assets_paths/resources.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
 
@@ -10,7 +10,7 @@ class PageListViewItem extends StatefulWidget {
     required this.object,
   }) : super(key: key);
 
-  final BaseObjectLeaf object;
+  final BaseObjectNode object;
 
   @override
   State<PageListViewItem> createState() => _PageListViewItemState();

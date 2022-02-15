@@ -3,18 +3,18 @@ import 'package:notion_client/data/models/interfaces/base_list.dart';
 import 'package:notion_client/data/models/interfaces/base_object.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'base_graph.freezed.dart';
+part 'workspace_graph.freezed.dart';
 
-class BaseGraph {
-  BaseGraph({
+class WorkspaceGraph {
+  WorkspaceGraph({
     required this.workspaceObjects,
   });
 
-  factory BaseGraph.fromBaseList({required BaseList baseList}) {
-    final lookup = <String, BaseObjectLeaf>{};
+  factory WorkspaceGraph.fromBaseList({required BaseList baseList}) {
+    final lookup = <String, BaseObjectNode>{};
 
     for (final baseObject in baseList.results) {
-      lookup[baseObject.id] = BaseObjectLeaf(
+      lookup[baseObject.id] = BaseObjectNode(
         baseObject: baseObject,
         children: [],
         parent: null,
@@ -23,7 +23,7 @@ class BaseGraph {
 
     for (var item in lookup.values) {
       final type = item.baseObject.parent.type;
-      BaseObjectLeaf? proposedParent;
+      BaseObjectNode? proposedParent;
 
       if (type == BaseObjectParentType.database && lookup.containsKey(item.baseObject.parent.databaseId)) {
         proposedParent = lookup[item.baseObject.parent.databaseId]!;
@@ -40,7 +40,7 @@ class BaseGraph {
       }
     }
 
-    return BaseGraph(
+    return WorkspaceGraph(
       workspaceObjects: [
         for (final workspaceObj in lookup.values)
           if (workspaceObj.baseObject.parent.type == BaseObjectParentType.workspace) workspaceObj
@@ -49,14 +49,14 @@ class BaseGraph {
   }
 
 
-  final List<BaseObjectLeaf> workspaceObjects;
+  final List<BaseObjectNode> workspaceObjects;
 }
 
 @freezed
-class BaseObjectLeaf with _$BaseObjectLeaf {
-  factory BaseObjectLeaf({
+class BaseObjectNode with _$BaseObjectNode {
+  factory BaseObjectNode({
     required BaseObject baseObject,
-    required BaseObjectLeaf? parent,
-    required List<BaseObjectLeaf> children,
-  }) = _BaseObjectLeaf;
+    required BaseObjectNode? parent,
+    required List<BaseObjectNode> children,
+  }) = _BaseObjectNode;
 }

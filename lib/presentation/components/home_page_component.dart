@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:notion_client/domain/use_cases/base_graph.dart';
+import 'package:notion_client/domain/use_cases/workspace_graph.dart';
 import 'package:notion_client/generated/l10n.dart';
 import 'package:notion_client/internal/routers/router.gr.dart';
 import 'package:notion_client/presentation/assets_paths/resources.dart';
@@ -16,7 +16,7 @@ class HomePageComponent extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  final BaseGraph baseGraph;
+  final WorkspaceGraph baseGraph;
 
   @override
   Widget build(BuildContext context) {

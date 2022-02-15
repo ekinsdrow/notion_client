@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'base_graph.dart';
+part of 'workspace_graph.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,14 +14,14 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$BaseObjectLeafTearOff {
-  const _$BaseObjectLeafTearOff();
+class _$BaseObjectNodeTearOff {
+  const _$BaseObjectNodeTearOff();
 
-  _BaseObjectLeaf call(
+  _BaseObjectNode call(
       {required BaseObject baseObject,
-      required BaseObjectLeaf? parent,
-      required List<BaseObjectLeaf> children}) {
-    return _BaseObjectLeaf(
+      required BaseObjectNode? parent,
+      required List<BaseObjectNode> children}) {
+    return _BaseObjectNode(
       baseObject: baseObject,
       parent: parent,
       children: children,
@@ -30,40 +30,40 @@ class _$BaseObjectLeafTearOff {
 }
 
 /// @nodoc
-const $BaseObjectLeaf = _$BaseObjectLeafTearOff();
+const $BaseObjectNode = _$BaseObjectNodeTearOff();
 
 /// @nodoc
-mixin _$BaseObjectLeaf {
+mixin _$BaseObjectNode {
   BaseObject get baseObject => throw _privateConstructorUsedError;
-  BaseObjectLeaf? get parent => throw _privateConstructorUsedError;
-  List<BaseObjectLeaf> get children => throw _privateConstructorUsedError;
+  BaseObjectNode? get parent => throw _privateConstructorUsedError;
+  List<BaseObjectNode> get children => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $BaseObjectLeafCopyWith<BaseObjectLeaf> get copyWith =>
+  $BaseObjectNodeCopyWith<BaseObjectNode> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BaseObjectLeafCopyWith<$Res> {
-  factory $BaseObjectLeafCopyWith(
-          BaseObjectLeaf value, $Res Function(BaseObjectLeaf) then) =
-      _$BaseObjectLeafCopyWithImpl<$Res>;
+abstract class $BaseObjectNodeCopyWith<$Res> {
+  factory $BaseObjectNodeCopyWith(
+          BaseObjectNode value, $Res Function(BaseObjectNode) then) =
+      _$BaseObjectNodeCopyWithImpl<$Res>;
   $Res call(
       {BaseObject baseObject,
-      BaseObjectLeaf? parent,
-      List<BaseObjectLeaf> children});
+      BaseObjectNode? parent,
+      List<BaseObjectNode> children});
 
-  $BaseObjectLeafCopyWith<$Res>? get parent;
+  $BaseObjectNodeCopyWith<$Res>? get parent;
 }
 
 /// @nodoc
-class _$BaseObjectLeafCopyWithImpl<$Res>
-    implements $BaseObjectLeafCopyWith<$Res> {
-  _$BaseObjectLeafCopyWithImpl(this._value, this._then);
+class _$BaseObjectNodeCopyWithImpl<$Res>
+    implements $BaseObjectNodeCopyWith<$Res> {
+  _$BaseObjectNodeCopyWithImpl(this._value, this._then);
 
-  final BaseObjectLeaf _value;
+  final BaseObjectNode _value;
   // ignore: unused_field
-  final $Res Function(BaseObjectLeaf) _then;
+  final $Res Function(BaseObjectNode) _then;
 
   @override
   $Res call({
@@ -79,52 +79,52 @@ class _$BaseObjectLeafCopyWithImpl<$Res>
       parent: parent == freezed
           ? _value.parent
           : parent // ignore: cast_nullable_to_non_nullable
-              as BaseObjectLeaf?,
+              as BaseObjectNode?,
       children: children == freezed
           ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
-              as List<BaseObjectLeaf>,
+              as List<BaseObjectNode>,
     ));
   }
 
   @override
-  $BaseObjectLeafCopyWith<$Res>? get parent {
+  $BaseObjectNodeCopyWith<$Res>? get parent {
     if (_value.parent == null) {
       return null;
     }
 
-    return $BaseObjectLeafCopyWith<$Res>(_value.parent!, (value) {
+    return $BaseObjectNodeCopyWith<$Res>(_value.parent!, (value) {
       return _then(_value.copyWith(parent: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$BaseObjectLeafCopyWith<$Res>
-    implements $BaseObjectLeafCopyWith<$Res> {
-  factory _$BaseObjectLeafCopyWith(
-          _BaseObjectLeaf value, $Res Function(_BaseObjectLeaf) then) =
-      __$BaseObjectLeafCopyWithImpl<$Res>;
+abstract class _$BaseObjectNodeCopyWith<$Res>
+    implements $BaseObjectNodeCopyWith<$Res> {
+  factory _$BaseObjectNodeCopyWith(
+          _BaseObjectNode value, $Res Function(_BaseObjectNode) then) =
+      __$BaseObjectNodeCopyWithImpl<$Res>;
   @override
   $Res call(
       {BaseObject baseObject,
-      BaseObjectLeaf? parent,
-      List<BaseObjectLeaf> children});
+      BaseObjectNode? parent,
+      List<BaseObjectNode> children});
 
   @override
-  $BaseObjectLeafCopyWith<$Res>? get parent;
+  $BaseObjectNodeCopyWith<$Res>? get parent;
 }
 
 /// @nodoc
-class __$BaseObjectLeafCopyWithImpl<$Res>
-    extends _$BaseObjectLeafCopyWithImpl<$Res>
-    implements _$BaseObjectLeafCopyWith<$Res> {
-  __$BaseObjectLeafCopyWithImpl(
-      _BaseObjectLeaf _value, $Res Function(_BaseObjectLeaf) _then)
-      : super(_value, (v) => _then(v as _BaseObjectLeaf));
+class __$BaseObjectNodeCopyWithImpl<$Res>
+    extends _$BaseObjectNodeCopyWithImpl<$Res>
+    implements _$BaseObjectNodeCopyWith<$Res> {
+  __$BaseObjectNodeCopyWithImpl(
+      _BaseObjectNode _value, $Res Function(_BaseObjectNode) _then)
+      : super(_value, (v) => _then(v as _BaseObjectNode));
 
   @override
-  _BaseObjectLeaf get _value => super._value as _BaseObjectLeaf;
+  _BaseObjectNode get _value => super._value as _BaseObjectNode;
 
   @override
   $Res call({
@@ -132,7 +132,7 @@ class __$BaseObjectLeafCopyWithImpl<$Res>
     Object? parent = freezed,
     Object? children = freezed,
   }) {
-    return _then(_BaseObjectLeaf(
+    return _then(_BaseObjectNode(
       baseObject: baseObject == freezed
           ? _value.baseObject
           : baseObject // ignore: cast_nullable_to_non_nullable
@@ -140,38 +140,38 @@ class __$BaseObjectLeafCopyWithImpl<$Res>
       parent: parent == freezed
           ? _value.parent
           : parent // ignore: cast_nullable_to_non_nullable
-              as BaseObjectLeaf?,
+              as BaseObjectNode?,
       children: children == freezed
           ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
-              as List<BaseObjectLeaf>,
+              as List<BaseObjectNode>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_BaseObjectLeaf implements _BaseObjectLeaf {
-  _$_BaseObjectLeaf(
+class _$_BaseObjectNode implements _BaseObjectNode {
+  _$_BaseObjectNode(
       {required this.baseObject, required this.parent, required this.children});
 
   @override
   final BaseObject baseObject;
   @override
-  final BaseObjectLeaf? parent;
+  final BaseObjectNode? parent;
   @override
-  final List<BaseObjectLeaf> children;
+  final List<BaseObjectNode> children;
 
   @override
   String toString() {
-    return 'BaseObjectLeaf(baseObject: $baseObject, parent: $parent, children: $children)';
+    return 'BaseObjectNode(baseObject: $baseObject, parent: $parent, children: $children)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _BaseObjectLeaf &&
+            other is _BaseObjectNode &&
             (identical(other.baseObject, baseObject) ||
                 other.baseObject == baseObject) &&
             (identical(other.parent, parent) || other.parent == parent) &&
@@ -184,24 +184,24 @@ class _$_BaseObjectLeaf implements _BaseObjectLeaf {
 
   @JsonKey(ignore: true)
   @override
-  _$BaseObjectLeafCopyWith<_BaseObjectLeaf> get copyWith =>
-      __$BaseObjectLeafCopyWithImpl<_BaseObjectLeaf>(this, _$identity);
+  _$BaseObjectNodeCopyWith<_BaseObjectNode> get copyWith =>
+      __$BaseObjectNodeCopyWithImpl<_BaseObjectNode>(this, _$identity);
 }
 
-abstract class _BaseObjectLeaf implements BaseObjectLeaf {
-  factory _BaseObjectLeaf(
+abstract class _BaseObjectNode implements BaseObjectNode {
+  factory _BaseObjectNode(
       {required BaseObject baseObject,
-      required BaseObjectLeaf? parent,
-      required List<BaseObjectLeaf> children}) = _$_BaseObjectLeaf;
+      required BaseObjectNode? parent,
+      required List<BaseObjectNode> children}) = _$_BaseObjectNode;
 
   @override
   BaseObject get baseObject;
   @override
-  BaseObjectLeaf? get parent;
+  BaseObjectNode? get parent;
   @override
-  List<BaseObjectLeaf> get children;
+  List<BaseObjectNode> get children;
   @override
   @JsonKey(ignore: true)
-  _$BaseObjectLeafCopyWith<_BaseObjectLeaf> get copyWith =>
+  _$BaseObjectNodeCopyWith<_BaseObjectNode> get copyWith =>
       throw _privateConstructorUsedError;
 }
