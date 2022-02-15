@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:notion_client/data/models/search_list.dart';
 import 'package:notion_client/data/repositories/pages_repository.dart';
+import 'package:notion_client/domain/use_cases/base_graph.dart';
 
 part 'home_page_event.dart';
 part 'home_page_state.dart';
@@ -30,9 +31,17 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
       final pages = await pagesRepository.getAllPages(
         token: event.token,
       );
+      final result = BaseGraph.fromBaseList(
+        baseList: pages,
+      );
 
+      result.printAll();
+
+      
       emit(
-        HomePageState.success(result: pages),
+        HomePageState.success(
+          result: result,
+        ),
       );
     } catch (e) {
       //TODO: error handling
