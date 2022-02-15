@@ -91,7 +91,7 @@ class _HorizontalPagesListViewState extends State<HorizontalPagesListView> {
           ),
         ),
         const SizedBox(
-          height: paddingsMedium,
+          height: paddingsMedium + 10,
         ),
         ClipRRect(
           borderRadius: BorderRadius.circular(5),

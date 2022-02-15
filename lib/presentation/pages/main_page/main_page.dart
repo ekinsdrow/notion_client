@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:notion_client/internal/routers/router.gr.dart';
 import 'package:notion_client/presentation/assets_paths/resources.dart';
+import 'package:notion_client/presentation/models/auth_token.dart';
 import 'package:notion_client/presentation/theme/theme.dart';
+import 'package:provider/provider.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({
@@ -15,48 +17,51 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AutoTabsScaffold(
-      routes: const [
-        HomeRouter(),
-        ProfileRouter(),
-      ],
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: SvgPicture.asset(
-          SvgPath.add,
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBuilder: (context, tabsRouter) => BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              SvgPath.home,
-            ),
-            activeIcon: SvgPicture.asset(
-              SvgPath.home,
-              color: AppTheme.primaryColor,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              SvgPath.user,
-            ),
-            activeIcon: SvgPicture.asset(
-              SvgPath.user,
-              color: AppTheme.primaryColor,
-            ),
-            label: '',
-          ),
+    return Provider<AuthToken>(
+      create: (context) => AuthToken(token: token),
+      child: AutoTabsScaffold(
+        routes: const [
+          HomeRouter(),
+          ProfileRouter(),
         ],
-        currentIndex: tabsRouter.activeIndex,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-        onTap: (final index) {
-          tabsRouter.setActiveIndex(index);
-        },
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: SvgPicture.asset(
+            SvgPath.add,
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBuilder: (context, tabsRouter) => BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                SvgPath.home,
+              ),
+              activeIcon: SvgPicture.asset(
+                SvgPath.home,
+                color: AppTheme.primaryColor,
+              ),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                SvgPath.user,
+              ),
+              activeIcon: SvgPicture.asset(
+                SvgPath.user,
+                color: AppTheme.primaryColor,
+              ),
+              label: '',
+            ),
+          ],
+          currentIndex: tabsRouter.activeIndex,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          type: BottomNavigationBarType.fixed,
+          onTap: (final index) {
+            tabsRouter.setActiveIndex(index);
+          },
+        ),
       ),
     );
   }

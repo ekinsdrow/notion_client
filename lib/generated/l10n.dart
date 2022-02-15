@@ -70,16 +70,6 @@ class S {
     );
   }
 
-  /// `Welcome!`
-  String get hello_header_2 {
-    return Intl.message(
-      'Welcome!',
-      name: 'hello_header_2',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco .`
   String get lorem_ipsum {
     return Intl.message(
@@ -130,11 +120,31 @@ class S {
     );
   }
 
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Token`
   String get token {
     return Intl.message(
       'Token',
       name: 'token',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome`
+  String get welcome {
+    return Intl.message(
+      'Welcome',
+      name: 'welcome',
       desc: '',
       args: [],
     );

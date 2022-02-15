@@ -25,16 +25,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "fav": MessageLookupByLibrary.simpleMessage("Избранное"),
         "hello_header": MessageLookupByLibrary.simpleMessage(
             "Привет, мы рады, что ты с нами!"),
-        "hello_header_2":
-            MessageLookupByLibrary.simpleMessage("Добро пожаловать!"),
         "lorem_ipsum": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ."),
         "next": MessageLookupByLibrary.simpleMessage("Продолжить"),
         "open_notion":
             MessageLookupByLibrary.simpleMessage("Открыть notion.so"),
         "pages_list": MessageLookupByLibrary.simpleMessage("Список страниц"),
+        "search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Войти"),
         "token": MessageLookupByLibrary.simpleMessage("Токен"),
+        "welcome": MessageLookupByLibrary.simpleMessage("Добро пожаловать!"),
         "welcome_text_1": MessageLookupByLibrary.simpleMessage(
             "Notion Client - это неофициальное приложение для сервиса Notion.so. Наша цель - сделать использование Notion на телефоне удобнее. Надеемся, вам понравится"),
         "welcome_text_2": MessageLookupByLibrary.simpleMessage(

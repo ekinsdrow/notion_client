@@ -25,14 +25,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "fav": MessageLookupByLibrary.simpleMessage("Favorites"),
         "hello_header": MessageLookupByLibrary.simpleMessage(
             "Hello, we are glad that you are with us!"),
-        "hello_header_2": MessageLookupByLibrary.simpleMessage("Welcome!"),
         "lorem_ipsum": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ."),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "open_notion": MessageLookupByLibrary.simpleMessage("Open notion.so"),
         "pages_list": MessageLookupByLibrary.simpleMessage("Pages list"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
         "token": MessageLookupByLibrary.simpleMessage("Token"),
+        "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "welcome_text_1": MessageLookupByLibrary.simpleMessage(
             "Notion Client is an unofficial application for the Notion.so. Our goal is to make the use of the Notion on the phone convenient. We hope you will like it"),
         "welcome_text_2": MessageLookupByLibrary.simpleMessage(
