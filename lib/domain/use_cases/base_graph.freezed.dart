@@ -13,57 +13,49 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-BaseGraphLeaf _$BaseGraphLeafFromJson(Map<String, dynamic> json) {
-  return _BaseGraphLeaf.fromJson(json);
-}
-
 /// @nodoc
-class _$BaseGraphLeafTearOff {
-  const _$BaseGraphLeafTearOff();
+class _$BaseObjectLeafTearOff {
+  const _$BaseObjectLeafTearOff();
 
-  _BaseGraphLeaf call(
-      {required BaseObject baseObject, required List<BaseObject> children}) {
-    return _BaseGraphLeaf(
+  _BaseObjectLeaf call(
+      {required BaseObject baseObject,
+      required List<BaseObjectLeaf> children}) {
+    return _BaseObjectLeaf(
       baseObject: baseObject,
       children: children,
     );
   }
-
-  BaseGraphLeaf fromJson(Map<String, Object?> json) {
-    return BaseGraphLeaf.fromJson(json);
-  }
 }
 
 /// @nodoc
-const $BaseGraphLeaf = _$BaseGraphLeafTearOff();
+const $BaseObjectLeaf = _$BaseObjectLeafTearOff();
 
 /// @nodoc
-mixin _$BaseGraphLeaf {
+mixin _$BaseObjectLeaf {
   BaseObject get baseObject => throw _privateConstructorUsedError;
-  List<BaseObject> get children => throw _privateConstructorUsedError;
+  List<BaseObjectLeaf> get children => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $BaseGraphLeafCopyWith<BaseGraphLeaf> get copyWith =>
+  $BaseObjectLeafCopyWith<BaseObjectLeaf> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BaseGraphLeafCopyWith<$Res> {
-  factory $BaseGraphLeafCopyWith(
-          BaseGraphLeaf value, $Res Function(BaseGraphLeaf) then) =
-      _$BaseGraphLeafCopyWithImpl<$Res>;
-  $Res call({BaseObject baseObject, List<BaseObject> children});
+abstract class $BaseObjectLeafCopyWith<$Res> {
+  factory $BaseObjectLeafCopyWith(
+          BaseObjectLeaf value, $Res Function(BaseObjectLeaf) then) =
+      _$BaseObjectLeafCopyWithImpl<$Res>;
+  $Res call({BaseObject baseObject, List<BaseObjectLeaf> children});
 }
 
 /// @nodoc
-class _$BaseGraphLeafCopyWithImpl<$Res>
-    implements $BaseGraphLeafCopyWith<$Res> {
-  _$BaseGraphLeafCopyWithImpl(this._value, this._then);
+class _$BaseObjectLeafCopyWithImpl<$Res>
+    implements $BaseObjectLeafCopyWith<$Res> {
+  _$BaseObjectLeafCopyWithImpl(this._value, this._then);
 
-  final BaseGraphLeaf _value;
+  final BaseObjectLeaf _value;
   // ignore: unused_field
-  final $Res Function(BaseGraphLeaf) _then;
+  final $Res Function(BaseObjectLeaf) _then;
 
   @override
   $Res call({
@@ -78,38 +70,38 @@ class _$BaseGraphLeafCopyWithImpl<$Res>
       children: children == freezed
           ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
-              as List<BaseObject>,
+              as List<BaseObjectLeaf>,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$BaseGraphLeafCopyWith<$Res>
-    implements $BaseGraphLeafCopyWith<$Res> {
-  factory _$BaseGraphLeafCopyWith(
-          _BaseGraphLeaf value, $Res Function(_BaseGraphLeaf) then) =
-      __$BaseGraphLeafCopyWithImpl<$Res>;
+abstract class _$BaseObjectLeafCopyWith<$Res>
+    implements $BaseObjectLeafCopyWith<$Res> {
+  factory _$BaseObjectLeafCopyWith(
+          _BaseObjectLeaf value, $Res Function(_BaseObjectLeaf) then) =
+      __$BaseObjectLeafCopyWithImpl<$Res>;
   @override
-  $Res call({BaseObject baseObject, List<BaseObject> children});
+  $Res call({BaseObject baseObject, List<BaseObjectLeaf> children});
 }
 
 /// @nodoc
-class __$BaseGraphLeafCopyWithImpl<$Res>
-    extends _$BaseGraphLeafCopyWithImpl<$Res>
-    implements _$BaseGraphLeafCopyWith<$Res> {
-  __$BaseGraphLeafCopyWithImpl(
-      _BaseGraphLeaf _value, $Res Function(_BaseGraphLeaf) _then)
-      : super(_value, (v) => _then(v as _BaseGraphLeaf));
+class __$BaseObjectLeafCopyWithImpl<$Res>
+    extends _$BaseObjectLeafCopyWithImpl<$Res>
+    implements _$BaseObjectLeafCopyWith<$Res> {
+  __$BaseObjectLeafCopyWithImpl(
+      _BaseObjectLeaf _value, $Res Function(_BaseObjectLeaf) _then)
+      : super(_value, (v) => _then(v as _BaseObjectLeaf));
 
   @override
-  _BaseGraphLeaf get _value => super._value as _BaseGraphLeaf;
+  _BaseObjectLeaf get _value => super._value as _BaseObjectLeaf;
 
   @override
   $Res call({
     Object? baseObject = freezed,
     Object? children = freezed,
   }) {
-    return _then(_BaseGraphLeaf(
+    return _then(_BaseObjectLeaf(
       baseObject: baseObject == freezed
           ? _value.baseObject
           : baseObject // ignore: cast_nullable_to_non_nullable
@@ -117,34 +109,31 @@ class __$BaseGraphLeafCopyWithImpl<$Res>
       children: children == freezed
           ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
-              as List<BaseObject>,
+              as List<BaseObjectLeaf>,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$_BaseGraphLeaf implements _BaseGraphLeaf {
-  _$_BaseGraphLeaf({required this.baseObject, required this.children});
 
-  factory _$_BaseGraphLeaf.fromJson(Map<String, dynamic> json) =>
-      _$$_BaseGraphLeafFromJson(json);
+class _$_BaseObjectLeaf implements _BaseObjectLeaf {
+  _$_BaseObjectLeaf({required this.baseObject, required this.children});
 
   @override
   final BaseObject baseObject;
   @override
-  final List<BaseObject> children;
+  final List<BaseObjectLeaf> children;
 
   @override
   String toString() {
-    return 'BaseGraphLeaf(baseObject: $baseObject, children: $children)';
+    return 'BaseObjectLeaf(baseObject: $baseObject, children: $children)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _BaseGraphLeaf &&
+            other is _BaseObjectLeaf &&
             (identical(other.baseObject, baseObject) ||
                 other.baseObject == baseObject) &&
             const DeepCollectionEquality().equals(other.children, children));
@@ -156,29 +145,21 @@ class _$_BaseGraphLeaf implements _BaseGraphLeaf {
 
   @JsonKey(ignore: true)
   @override
-  _$BaseGraphLeafCopyWith<_BaseGraphLeaf> get copyWith =>
-      __$BaseGraphLeafCopyWithImpl<_BaseGraphLeaf>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_BaseGraphLeafToJson(this);
-  }
+  _$BaseObjectLeafCopyWith<_BaseObjectLeaf> get copyWith =>
+      __$BaseObjectLeafCopyWithImpl<_BaseObjectLeaf>(this, _$identity);
 }
 
-abstract class _BaseGraphLeaf implements BaseGraphLeaf {
-  factory _BaseGraphLeaf(
+abstract class _BaseObjectLeaf implements BaseObjectLeaf {
+  factory _BaseObjectLeaf(
       {required BaseObject baseObject,
-      required List<BaseObject> children}) = _$_BaseGraphLeaf;
-
-  factory _BaseGraphLeaf.fromJson(Map<String, dynamic> json) =
-      _$_BaseGraphLeaf.fromJson;
+      required List<BaseObjectLeaf> children}) = _$_BaseObjectLeaf;
 
   @override
   BaseObject get baseObject;
   @override
-  List<BaseObject> get children;
+  List<BaseObjectLeaf> get children;
   @override
   @JsonKey(ignore: true)
-  _$BaseGraphLeafCopyWith<_BaseGraphLeaf> get copyWith =>
+  _$BaseObjectLeafCopyWith<_BaseObjectLeaf> get copyWith =>
       throw _privateConstructorUsedError;
 }

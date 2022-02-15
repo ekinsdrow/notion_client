@@ -9,6 +9,7 @@ class DioRequestInterceptor extends Interceptor {
   ) {
     options.headers['Notion-Version'] = notionVersion;
 
+
     handler.next(options);
   }
 }
