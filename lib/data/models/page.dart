@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:notion_client/data/models/page_properties.dart';
 
+import 'base_object_parent.dart';
 import 'interfaces/base_object.dart';
 part 'page.g.dart';
 
@@ -10,11 +11,16 @@ class Page implements BaseObject {
     required this.id,
     required this.object,
     required this.pageProperties,
+    required this.parent,
   });
 
   @override
   final String id;
 
+
+  @override
+  final BaseObjectParent parent;
+  
   @override
   final String object;
 

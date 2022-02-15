@@ -36,11 +36,14 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
       );
     } catch (e) {
       //TODO: error handling
+
       emit(
         HomePageState.error(
           error: e.toString().substring(0, 30),
         ),
       );
+
+      rethrow;
     }
   }
 }

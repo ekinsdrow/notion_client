@@ -9,17 +9,15 @@ part of 'database.dart';
 Database _$DatabaseFromJson(Map<String, dynamic> json) => Database(
       object: json['object'] as String,
       id: json['id'] as String,
-      icon: json['icon'] == null
-          ? null
-          : EmojiIcon.fromJson(json['icon'] as Map<String, dynamic>),
       richTextTitle: (json['title'] as List<dynamic>)
           .map((e) => RichText.fromJson(e as Map<String, dynamic>))
           .toList(),
+      parent: BaseObjectParent.fromJson(json['parent'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$DatabaseToJson(Database instance) => <String, dynamic>{
       'id': instance.id,
       'object': instance.object,
-      'icon': instance.icon,
+      'parent': instance.parent,
       'title': instance.richTextTitle,
     };
