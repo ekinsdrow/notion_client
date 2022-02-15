@@ -19,9 +19,11 @@ class _$BaseObjectLeafTearOff {
 
   _BaseObjectLeaf call(
       {required BaseObject baseObject,
+      required BaseObjectLeaf? parent,
       required List<BaseObjectLeaf> children}) {
     return _BaseObjectLeaf(
       baseObject: baseObject,
+      parent: parent,
       children: children,
     );
   }
@@ -33,6 +35,7 @@ const $BaseObjectLeaf = _$BaseObjectLeafTearOff();
 /// @nodoc
 mixin _$BaseObjectLeaf {
   BaseObject get baseObject => throw _privateConstructorUsedError;
+  BaseObjectLeaf? get parent => throw _privateConstructorUsedError;
   List<BaseObjectLeaf> get children => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -45,7 +48,12 @@ abstract class $BaseObjectLeafCopyWith<$Res> {
   factory $BaseObjectLeafCopyWith(
           BaseObjectLeaf value, $Res Function(BaseObjectLeaf) then) =
       _$BaseObjectLeafCopyWithImpl<$Res>;
-  $Res call({BaseObject baseObject, List<BaseObjectLeaf> children});
+  $Res call(
+      {BaseObject baseObject,
+      BaseObjectLeaf? parent,
+      List<BaseObjectLeaf> children});
+
+  $BaseObjectLeafCopyWith<$Res>? get parent;
 }
 
 /// @nodoc
@@ -60,6 +68,7 @@ class _$BaseObjectLeafCopyWithImpl<$Res>
   @override
   $Res call({
     Object? baseObject = freezed,
+    Object? parent = freezed,
     Object? children = freezed,
   }) {
     return _then(_value.copyWith(
@@ -67,11 +76,26 @@ class _$BaseObjectLeafCopyWithImpl<$Res>
           ? _value.baseObject
           : baseObject // ignore: cast_nullable_to_non_nullable
               as BaseObject,
+      parent: parent == freezed
+          ? _value.parent
+          : parent // ignore: cast_nullable_to_non_nullable
+              as BaseObjectLeaf?,
       children: children == freezed
           ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
               as List<BaseObjectLeaf>,
     ));
+  }
+
+  @override
+  $BaseObjectLeafCopyWith<$Res>? get parent {
+    if (_value.parent == null) {
+      return null;
+    }
+
+    return $BaseObjectLeafCopyWith<$Res>(_value.parent!, (value) {
+      return _then(_value.copyWith(parent: value));
+    });
   }
 }
 
@@ -82,7 +106,13 @@ abstract class _$BaseObjectLeafCopyWith<$Res>
           _BaseObjectLeaf value, $Res Function(_BaseObjectLeaf) then) =
       __$BaseObjectLeafCopyWithImpl<$Res>;
   @override
-  $Res call({BaseObject baseObject, List<BaseObjectLeaf> children});
+  $Res call(
+      {BaseObject baseObject,
+      BaseObjectLeaf? parent,
+      List<BaseObjectLeaf> children});
+
+  @override
+  $BaseObjectLeafCopyWith<$Res>? get parent;
 }
 
 /// @nodoc
@@ -99,6 +129,7 @@ class __$BaseObjectLeafCopyWithImpl<$Res>
   @override
   $Res call({
     Object? baseObject = freezed,
+    Object? parent = freezed,
     Object? children = freezed,
   }) {
     return _then(_BaseObjectLeaf(
@@ -106,6 +137,10 @@ class __$BaseObjectLeafCopyWithImpl<$Res>
           ? _value.baseObject
           : baseObject // ignore: cast_nullable_to_non_nullable
               as BaseObject,
+      parent: parent == freezed
+          ? _value.parent
+          : parent // ignore: cast_nullable_to_non_nullable
+              as BaseObjectLeaf?,
       children: children == freezed
           ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
@@ -117,16 +152,19 @@ class __$BaseObjectLeafCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_BaseObjectLeaf implements _BaseObjectLeaf {
-  _$_BaseObjectLeaf({required this.baseObject, required this.children});
+  _$_BaseObjectLeaf(
+      {required this.baseObject, required this.parent, required this.children});
 
   @override
   final BaseObject baseObject;
+  @override
+  final BaseObjectLeaf? parent;
   @override
   final List<BaseObjectLeaf> children;
 
   @override
   String toString() {
-    return 'BaseObjectLeaf(baseObject: $baseObject, children: $children)';
+    return 'BaseObjectLeaf(baseObject: $baseObject, parent: $parent, children: $children)';
   }
 
   @override
@@ -136,12 +174,13 @@ class _$_BaseObjectLeaf implements _BaseObjectLeaf {
             other is _BaseObjectLeaf &&
             (identical(other.baseObject, baseObject) ||
                 other.baseObject == baseObject) &&
+            (identical(other.parent, parent) || other.parent == parent) &&
             const DeepCollectionEquality().equals(other.children, children));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, baseObject, const DeepCollectionEquality().hash(children));
+  int get hashCode => Object.hash(runtimeType, baseObject, parent,
+      const DeepCollectionEquality().hash(children));
 
   @JsonKey(ignore: true)
   @override
@@ -152,10 +191,13 @@ class _$_BaseObjectLeaf implements _BaseObjectLeaf {
 abstract class _BaseObjectLeaf implements BaseObjectLeaf {
   factory _BaseObjectLeaf(
       {required BaseObject baseObject,
+      required BaseObjectLeaf? parent,
       required List<BaseObjectLeaf> children}) = _$_BaseObjectLeaf;
 
   @override
   BaseObject get baseObject;
+  @override
+  BaseObjectLeaf? get parent;
   @override
   List<BaseObjectLeaf> get children;
   @override

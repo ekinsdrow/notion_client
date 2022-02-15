@@ -10,109 +10,44 @@ class BaseGraph {
     required this.workspaceObjects,
   });
 
-  void _printAll({
-    required List<BaseObjectLeaf> list,
-    required int tab,
-  }) {
-    for (final o in list) {
-      var i = tab;
-      var tabs = '';
-      for (var i = 0; i < tab; i++) {
-        tabs += ' ';
-      }
-
-      print(
-        '$tabs--------------${o.baseObject.title} ${o.baseObject.id}  ${o.children.length}------------',
-      );
-
-      if (o.children.isNotEmpty) {
-        i += 5;
-
-        _printAll(
-          list: o.children,
-          tab: i,
-        );
-      }
-    }
-  }
-
-  void printAll() {
-    _printAll(
-      list: workspaceObjects,
-      tab: 0,
-    );
-  }
-
   factory BaseGraph.fromBaseList({required BaseList baseList}) {
-    final workspaceObjects = <BaseObjectLeaf>[];
-    final remainingObjects = [...baseList.results];
+    final lookup = <String, BaseObjectLeaf>{};
 
-    //Generate workSpace objects
     for (final baseObject in baseList.results) {
-      final type = baseObject.parent.type;
-      if (type == BaseObjectParentType.workspace) {
-        workspaceObjects.add(
-          BaseObjectLeaf(
-            baseObject: baseObject,
-            children: [],
-          ),
-        );
-
-        remainingObjects.remove(baseObject);
-      }
+      lookup[baseObject.id] = BaseObjectLeaf(
+        baseObject: baseObject,
+        children: [],
+        parent: null,
+      );
     }
 
-    BaseObjectLeaf? _findLeafParent({
-      required BaseObject baseObject,
-      required BaseObjectLeaf workSpaceLeaf,
-      required bool isDatabase,
-    }) {
-      if (workSpaceLeaf.baseObject.id == (isDatabase ? baseObject.parent.databaseId : baseObject.parent.pageId)) {
-        workSpaceLeaf.children.add(
-          BaseObjectLeaf(
-            baseObject: baseObject,
-            children: [],
-          ),
-        );
+    for (var item in lookup.values) {
+      final type = item.baseObject.parent.type;
+      BaseObjectLeaf? proposedParent;
 
-        return workSpaceLeaf;
-      } else {
-        if (workSpaceLeaf.children.isNotEmpty) {
-          //Todo: sub pages
-          for (final o in workSpaceLeaf.children) {}
-        }
+      if (type == BaseObjectParentType.database && lookup.containsKey(item.baseObject.parent.databaseId)) {
+        proposedParent = lookup[item.baseObject.parent.databaseId]!;
+      } else if (type == BaseObjectParentType.page && lookup.containsKey(item.baseObject.parent.pageId)) {
+        proposedParent = lookup[item.baseObject.parent.pageId]!;
       }
 
-        return workSpaceLeaf;
-
-    }
-
-    //TODO: add other layer of graph
-
-    while (remainingObjects.isNotEmpty) {
-      print(remainingObjects.length);
-      for (final remainingObject in [...remainingObjects]) {
-        for (var i = 0; i < workspaceObjects.length; i++) {
-          final leaf = _findLeafParent(
-            baseObject: remainingObject,
-            workSpaceLeaf: workspaceObjects[i],
-            isDatabase: remainingObject.parent.type == BaseObjectParentType.database,
-          );
-
-          if (leaf != workspaceObjects[i]) {
-            if (leaf != null) {
-              workspaceObjects[i] = leaf;
-              remainingObjects.remove(remainingObject);
-            }
-          }
-        }
+      if (proposedParent != null) {
+        proposedParent.children.add(item);
+        final key = lookup.keys.firstWhere((element) => element == item.baseObject.id);
+        lookup[key] = lookup[key]!.copyWith(
+          parent: proposedParent,
+        );
       }
     }
 
     return BaseGraph(
-      workspaceObjects: workspaceObjects,
+      workspaceObjects: [
+        for (final workspaceObj in lookup.values)
+          if (workspaceObj.baseObject.parent.type == BaseObjectParentType.workspace) workspaceObj
+      ],
     );
   }
+
 
   final List<BaseObjectLeaf> workspaceObjects;
 }
@@ -121,6 +56,7 @@ class BaseGraph {
 class BaseObjectLeaf with _$BaseObjectLeaf {
   factory BaseObjectLeaf({
     required BaseObject baseObject,
+    required BaseObjectLeaf? parent,
     required List<BaseObjectLeaf> children,
   }) = _BaseObjectLeaf;
 }
