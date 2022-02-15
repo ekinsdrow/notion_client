@@ -32,9 +32,9 @@ class PageListViewItem extends StatelessWidget {
                 const SizedBox(
                   width: 10,
                 ),
-                Text(
-                  object.icon != null ? object.icon!.emoji : '📄',
-                  style: const TextStyle(
+                const Text(
+                  '📄',
+                  style:  TextStyle(
                     fontSize: 25,
                   ),
                 ),
