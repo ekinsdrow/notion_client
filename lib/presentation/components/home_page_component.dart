@@ -58,7 +58,7 @@ class HomePageComponent extends StatelessWidget {
                 (BuildContext context, int index) => Column(
                   children: [
                     PageListViewItem(
-                      object: baseGraph.workspaceObjects[index].baseObject,
+                      object: baseGraph.workspaceObjects[index],
                     ),
                     const SizedBox(
                       height: paddingsMedium,
