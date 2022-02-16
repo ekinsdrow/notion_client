@@ -1,9 +1,19 @@
-// Interface to Pages and Database
 import 'package:notion_client/data/models/base_object_parent.dart';
 
+import '../emoji_icon.dart';
+
+// Interface to Pages and Databases
 abstract class BaseObject {
   String get id;
   String get title;
-  String get object;
   BaseObjectParent get parent;
+  EmojiIcon? get emojiIcon;
+
+  static EmojiIcon? emojiIconFromJson(Map<String, dynamic>? json) {
+    if (json != null) {
+      if (json['type'] == 'emoji') {
+        return EmojiIcon.fromJson(json);
+      }
+    }
+  }
 }

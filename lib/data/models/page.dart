@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:notion_client/data/models/emoji_icon.dart';
 import 'package:notion_client/data/models/page_properties.dart';
 
 import 'base_object_parent.dart';
@@ -9,20 +10,23 @@ part 'page.g.dart';
 class Page implements BaseObject {
   Page({
     required this.id,
-    required this.object,
     required this.pageProperties,
     required this.parent,
+    required this.emojiIcon,
   });
 
   @override
   final String id;
 
-
   @override
   final BaseObjectParent parent;
-  
+
   @override
-  final String object;
+  @JsonKey(
+    fromJson: BaseObject.emojiIconFromJson,
+    name: 'icon',
+  )
+  final EmojiIcon? emojiIcon;
 
   @override
   String get title {
