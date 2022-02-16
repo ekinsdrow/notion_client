@@ -45,9 +45,9 @@ class _PageListViewItemState extends State<PageListViewItem> {
                   const SizedBox(
                     width: 10,
                   ),
-                  const Text(
-                    '📄',
-                    style: TextStyle(
+                  Text(
+                    widget.object.baseObject.emojiIcon != null ? widget.object.baseObject.emojiIcon!.emoji : '📄',
+                    style: const TextStyle(
                       fontSize: 25,
                     ),
                   ),
