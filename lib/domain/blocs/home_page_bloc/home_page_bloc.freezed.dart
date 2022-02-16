@@ -17,10 +17,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$HomePageEventTearOff {
   const _$HomePageEventTearOff();
 
-  Fetch fetch({required String token}) {
-    return Fetch(
-      token: token,
-    );
+  Fetch fetch() {
+    return const Fetch();
   }
 }
 
@@ -29,21 +27,19 @@ const $HomePageEvent = _$HomePageEventTearOff();
 
 /// @nodoc
 mixin _$HomePageEvent {
-  String get token => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String token) fetch,
+    required TResult Function() fetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String token)? fetch,
+    TResult Function()? fetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String token)? fetch,
+    TResult Function()? fetch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,10 +59,6 @@ mixin _$HomePageEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $HomePageEventCopyWith<HomePageEvent> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -74,7 +66,6 @@ abstract class $HomePageEventCopyWith<$Res> {
   factory $HomePageEventCopyWith(
           HomePageEvent value, $Res Function(HomePageEvent) then) =
       _$HomePageEventCopyWithImpl<$Res>;
-  $Res call({String token});
 }
 
 /// @nodoc
@@ -85,26 +76,12 @@ class _$HomePageEventCopyWithImpl<$Res>
   final HomePageEvent _value;
   // ignore: unused_field
   final $Res Function(HomePageEvent) _then;
-
-  @override
-  $Res call({
-    Object? token = freezed,
-  }) {
-    return _then(_value.copyWith(
-      token: token == freezed
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class $FetchCopyWith<$Res> implements $HomePageEventCopyWith<$Res> {
+abstract class $FetchCopyWith<$Res> {
   factory $FetchCopyWith(Fetch value, $Res Function(Fetch) then) =
       _$FetchCopyWithImpl<$Res>;
-  @override
-  $Res call({String token});
 }
 
 /// @nodoc
@@ -115,73 +92,51 @@ class _$FetchCopyWithImpl<$Res> extends _$HomePageEventCopyWithImpl<$Res>
 
   @override
   Fetch get _value => super._value as Fetch;
-
-  @override
-  $Res call({
-    Object? token = freezed,
-  }) {
-    return _then(Fetch(
-      token: token == freezed
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$Fetch implements Fetch {
-  const _$Fetch({required this.token});
-
-  @override
-  final String token;
+  const _$Fetch();
 
   @override
   String toString() {
-    return 'HomePageEvent.fetch(token: $token)';
+    return 'HomePageEvent.fetch()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Fetch &&
-            (identical(other.token, token) || other.token == token));
+        (other.runtimeType == runtimeType && other is Fetch);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, token);
-
-  @JsonKey(ignore: true)
-  @override
-  $FetchCopyWith<Fetch> get copyWith =>
-      _$FetchCopyWithImpl<Fetch>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String token) fetch,
+    required TResult Function() fetch,
   }) {
-    return fetch(token);
+    return fetch();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String token)? fetch,
+    TResult Function()? fetch,
   }) {
-    return fetch?.call(token);
+    return fetch?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String token)? fetch,
+    TResult Function()? fetch,
     required TResult orElse(),
   }) {
     if (fetch != null) {
-      return fetch(token);
+      return fetch();
     }
     return orElse();
   }
@@ -216,13 +171,7 @@ class _$Fetch implements Fetch {
 }
 
 abstract class Fetch implements HomePageEvent {
-  const factory Fetch({required String token}) = _$Fetch;
-
-  @override
-  String get token;
-  @override
-  @JsonKey(ignore: true)
-  $FetchCopyWith<Fetch> get copyWith => throw _privateConstructorUsedError;
+  const factory Fetch() = _$Fetch;
 }
 
 /// @nodoc

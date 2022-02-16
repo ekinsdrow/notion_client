@@ -5,15 +5,15 @@ import '../models/search_list.dart';
 
 class PagesRepositoryImpl implements PagesRepository {
   final NotionClient notionClient;
+  final String token;
 
   PagesRepositoryImpl({
     required this.notionClient,
+    required this.token,
   });
 
   @override
-  Future<SearchList> getAllPages({
-    required String token,
-  }) async {
+  Future<SearchList> getAllPages() async {
     return await notionClient.getAllUserPages(
       token: token,
     );

@@ -23,12 +23,7 @@ class HomePage extends StatelessWidget {
                 errorText: state.error,
                 callback: () {
                   BlocProvider.of<HomePageBloc>(context).add(
-                    HomePageEvent.fetch(
-                      token: Provider.of<AuthToken>(
-                        context,
-                        listen: false,
-                      ).token,
-                    ),
+                    const HomePageEvent.fetch(),
                   );
                 },
               ),

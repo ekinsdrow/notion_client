@@ -27,14 +27,11 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
     );
 
     try {
-      final pages = await pagesRepository.getAllPages(
-        token: event.token,
-      );
+      final pages = await pagesRepository.getAllPages();
       final result = WorkspaceGraph.fromBaseList(
         baseList: pages,
       );
 
-      
       emit(
         HomePageState.success(
           result: result,

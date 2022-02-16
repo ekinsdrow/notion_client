@@ -1,11 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:notion_client/internal/di/main_page_scope.dart';
 import 'package:notion_client/internal/routers/router.gr.dart';
 import 'package:notion_client/presentation/assets_paths/resources.dart';
-import 'package:notion_client/presentation/models/auth_token.dart';
 import 'package:notion_client/presentation/theme/theme.dart';
-import 'package:provider/provider.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({
@@ -17,8 +16,8 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Provider<AuthToken>(
-      create: (context) => AuthToken(token: token),
+    return MainPageScope(
+      token: token,
       child: AutoTabsScaffold(
         routes: const [
           HomeRouter(),

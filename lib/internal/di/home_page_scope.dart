@@ -20,17 +20,13 @@ class HomePageScope extends StatelessWidget {
     return RepositoryProvider<PagesRepository>(
       create: (context) => PagesRepositoryImpl(
         notionClient: context.read<NotionClient>(),
+        token: context.read<AuthToken>().token,
       ),
       child: BlocProvider(
         create: (context) => HomePageBloc(
           pagesRepository: RepositoryProvider.of<PagesRepository>(context),
         )..add(
-            HomePageEvent.fetch(
-              token: Provider.of<AuthToken>(
-                context,
-                listen: false,
-              ).token,
-            ),
+            const HomePageEvent.fetch(),
           ),
         child: child,
       ),
