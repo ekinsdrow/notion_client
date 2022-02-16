@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notion_client/internal/di/home_page_scope.dart';
 import 'package:notion_client/presentation/components/home_page_component.dart';
-import 'package:notion_client/presentation/models/auth_token.dart';
 import 'package:notion_client/presentation/widgets/loader.dart';
-import 'package:provider/provider.dart';
 
 import '../../../domain/blocs/home_page_bloc/home_page_bloc.dart';
 import '../../widgets/retry_error_widget.dart';

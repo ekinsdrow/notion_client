@@ -5,7 +5,6 @@ import 'package:notion_client/data/repositories/pages_repository.dart';
 import 'package:notion_client/data/repositories/pages_repository_impl.dart';
 import 'package:notion_client/domain/blocs/home_page_bloc/home_page_bloc.dart';
 import 'package:notion_client/presentation/models/auth_token.dart';
-import 'package:provider/provider.dart';
 
 class HomePageScope extends StatelessWidget {
   const HomePageScope({
