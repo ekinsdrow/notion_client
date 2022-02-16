@@ -39,7 +39,7 @@ class WorkspaceGraph {
         );
       }
     }
-
+  
     return WorkspaceGraph(
       workspaceObjects: [
         for (final workspaceObj in lookup.values)

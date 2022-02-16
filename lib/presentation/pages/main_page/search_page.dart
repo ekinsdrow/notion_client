@@ -21,12 +21,21 @@ class SearchPage extends StatelessWidget {
               SearchInput(
                 autofocus: true,
               ),
-
-              //TODO (Anya): search results
+              SearchResults(),
             ],
           ),
         ),
       ),
     );
+  }
+}
+
+//TODO (Anya): search results
+class SearchResults extends StatelessWidget {
+  const SearchResults({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
