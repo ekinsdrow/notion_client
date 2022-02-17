@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notion_client/data/clients/notion_client.dart';
 import 'package:notion_client/data/repositories/auth_repository.dart';
 import 'package:notion_client/data/repositories/auth_repository_impl.dart';
 import 'package:notion_client/data/repositories/token_repository.dart';
 import 'package:notion_client/domain/blocs/auth_bloc/auth_bloc.dart';
-import 'package:notion_client/data/clients/notion_client.dart';
 
 class AuthScope extends StatelessWidget {
   const AuthScope({

@@ -33,7 +33,10 @@ class Database implements BaseObject {
   @JsonKey(name: 'title')
   final List<RichText> richTextTitle;
 
-  factory Database.fromJson(Map<String, dynamic> json) => _$DatabaseFromJson(json);
+  factory Database.fromJson(
+    Map<String, dynamic> json,
+  ) =>
+      _$DatabaseFromJson(json);
 
   Map<String, dynamic> toJson() => _$DatabaseToJson(this);
 }

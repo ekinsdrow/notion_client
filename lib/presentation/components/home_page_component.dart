@@ -75,7 +75,8 @@ class HomePageComponent extends StatelessWidget {
   }
 }
 
-class _SearchSliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
+class _SearchSliverPersistentHeaderDelegate
+    extends SliverPersistentHeaderDelegate {
   final Widget child;
   final double max;
   final double min;
@@ -87,7 +88,11 @@ class _SearchSliverPersistentHeaderDelegate extends SliverPersistentHeaderDelega
   });
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
     return child;
   }
 

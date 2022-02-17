@@ -11,7 +11,10 @@ class BaseObjectParent with _$BaseObjectParent {
     @JsonKey(name: 'page_id') required String? pageId,
   }) = _BaseObjectParent;
 
-  factory BaseObjectParent.fromJson(Map<String, dynamic> json) => _$BaseObjectParentFromJson(json);
+  factory BaseObjectParent.fromJson(
+    Map<String, dynamic> json,
+  ) =>
+      _$BaseObjectParentFromJson(json);
 }
 
 enum BaseObjectParentType {

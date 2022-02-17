@@ -104,7 +104,8 @@ class _WelcomePageState extends State<WelcomePage> {
                       for (int i = 0; i < 2; i++)
                         Builder(
                           builder: (context) {
-                            final _active = (_isNext ? _page.ceil() : _page.floor()) == i;
+                            final _active =
+                                (_isNext ? _page.ceil() : _page.floor()) == i;
 
                             return AnimatedContainer(
                               duration: const Duration(milliseconds: 300),
@@ -114,8 +115,12 @@ class _WelcomePageState extends State<WelcomePage> {
                               width: _active ? 26 : 15,
                               height: 15,
                               decoration: BoxDecoration(
-                                color: _active ? const Color(0xFF989898) : const Color(0xFFC4C4C4),
-                                borderRadius: _active ? BorderRadius.circular(7) : BorderRadius.circular(15),
+                                color: _active
+                                    ? const Color(0xFF989898)
+                                    : const Color(0xFFC4C4C4),
+                                borderRadius: _active
+                                    ? BorderRadius.circular(7)
+                                    : BorderRadius.circular(15),
                               ),
                             );
                           },
@@ -137,7 +142,9 @@ class _WelcomePageState extends State<WelcomePage> {
                           child: ElevatedButton(
                             onPressed: _index == 0 ? _nextPage : _signIn,
                             child: Text(
-                              _index == 0 ? S.of(context).next : S.of(context).sign_in,
+                              _index == 0
+                                  ? S.of(context).next
+                                  : S.of(context).sign_in,
                             ),
                           ),
                         ),

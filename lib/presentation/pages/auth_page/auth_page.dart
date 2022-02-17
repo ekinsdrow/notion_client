@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notion_client/domain/blocs/auth_bloc/auth_bloc.dart';
@@ -7,8 +6,8 @@ import 'package:notion_client/internal/di/auth_page_scope.dart';
 import 'package:notion_client/internal/routers/router.gr.dart';
 import 'package:notion_client/presentation/theme/theme.dart';
 import 'package:notion_client/presentation/widgets/loader.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 import 'package:oauth2/oauth2.dart' as oauth2;
+import 'package:webview_flutter/webview_flutter.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({

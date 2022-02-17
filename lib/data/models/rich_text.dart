@@ -9,5 +9,10 @@ class RichText with _$RichText {
     @JsonKey(name: 'plain_text') required String plainText,
   }) = _RichText;
 
-  factory RichText.fromJson(Map<String, dynamic> json) => _$RichTextFromJson(json);
+  factory RichText.fromJson(
+    Map<String, dynamic> json,
+  ) =>
+      _$RichTextFromJson(
+        json,
+      );
 }

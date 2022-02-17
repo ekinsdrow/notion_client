@@ -7,5 +7,8 @@ part 'emoji_icon.g.dart';
 class EmojiIcon with _$EmojiIcon {
   factory EmojiIcon({required String emoji}) = _EmojiIcon;
 
-  factory EmojiIcon.fromJson(Map<String, dynamic> json) => _$EmojiIconFromJson(json);
+  factory EmojiIcon.fromJson(
+    Map<String, dynamic> json,
+  ) =>
+      _$EmojiIconFromJson(json);
 }
