@@ -47,69 +47,68 @@ class _AuthPageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     return AuthScope(
-      child: Builder(builder: (context) {
-        return BlocListener<AuthBloc, AuthState>(
-          listener: (context, state) => state.whenOrNull(
-            loading: () {
-              setState(() {
-                _loadingBloc = true;
-              });
-
-            },
-            success: (token) {
-              context.router.replaceAll(
-                [
-                  MainRoute(
-                    token: token,
-                  ),
-                ],
-              );
-
-            },
-            error: () {
-              //TODO(Ivan): handle error
-
-            },
-          ),
-          child: Scaffold(
-            appBar: AppBar(),
-            body: SafeArea(
-              child: Stack(
-                children: [
-                  WebView(
-                    onPageFinished: (url) {
-                      setState(() {
-                        _loadingWebView = false;
-                      });
-                    },
-                    javascriptMode: JavascriptMode.unrestricted,
-                    initialUrl: _authorizationUrl.toString(),
-                    onPageStarted: (url) {
-                      final _url = Uri.parse(url);
-
-                      if (_url.queryParameters.containsKey('code')) {
-                        BlocProvider.of<AuthBloc>(context).add(
-                          AuthEvent.fetch(
-                            code: _url.queryParameters['code']!,
-                            redirectUrl: redirectUrl.toString(),
-                          ),
-                        );
-                      }
-                    },
-                  ),
-                  if (_loadingWebView || _loadingBloc)
-                    Container(
-                      color: AppTheme.backgroundColor,
-                      child: const Center(
-                        child: Loader(),
-                      ),
+      child: Builder(
+        builder: (context) {
+          return BlocListener<AuthBloc, AuthState>(
+            listener: (context, state) => state.whenOrNull(
+              loading: () {
+                setState(() {
+                  _loadingBloc = true;
+                });
+              },
+              success: (token) {
+                context.router.replaceAll(
+                  [
+                    MainRoute(
+                      token: token,
                     ),
-                ],
+                  ],
+                );
+              },
+              error: () {
+                //TODO(Ivan): handle error
+              },
+            ),
+            child: Scaffold(
+              appBar: AppBar(),
+              body: SafeArea(
+                child: Stack(
+                  children: [
+                    WebView(
+                      onPageFinished: (url) {
+                        setState(() {
+                          _loadingWebView = false;
+                        });
+                      },
+                      javascriptMode: JavascriptMode.unrestricted,
+                      initialUrl: _authorizationUrl.toString(),
+                      onPageStarted: (url) {
+                        final _url = Uri.parse(url);
+
+                        if (_url.queryParameters.containsKey('code')) {
+                          BlocProvider.of<AuthBloc>(context).add(
+                            AuthEvent.fetch(
+                              code: _url.queryParameters['code']!,
+                              redirectUrl: redirectUrl.toString(),
+                            ),
+                          );
+                        }
+                      },
+                    ),
+                    if (_loadingWebView || _loadingBloc)
+                      Container(
+                        color: AppTheme.backgroundColor,
+                        child: const Center(
+                          child: Loader(),
+                        ),
+                      ),
+                  ],
+                ),
               ),
             ),
-          ),
-        );
-      }),
+          );
+        },
+      ),
     );
   }
 }

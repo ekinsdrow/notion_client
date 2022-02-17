@@ -17,6 +17,6 @@ class AuthRepositoryImpl implements AuthRepository {
   }) =>
       notionClient.getToken(
         authBody: authBody,
-        token: 'Basic $token'
+        token: 'Basic $token',
       );
 }

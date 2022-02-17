@@ -102,44 +102,48 @@ class _WelcomePageState extends State<WelcomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       for (int i = 0; i < 2; i++)
-                        Builder(builder: (context) {
-                          final _active = (_isNext ? _page.ceil() : _page.floor()) == i;
+                        Builder(
+                          builder: (context) {
+                            final _active = (_isNext ? _page.ceil() : _page.floor()) == i;
 
-                          return AnimatedContainer(
-                            duration: const Duration(milliseconds: 300),
-                            margin: const EdgeInsets.symmetric(
-                              horizontal: 5,
-                            ),
-                            width: _active ? 26 : 15,
-                            height: 15,
-                            decoration: BoxDecoration(
-                              color: _active ? const Color(0xFF989898) : const Color(0xFFC4C4C4),
-                              borderRadius: _active ? BorderRadius.circular(7) : BorderRadius.circular(15),
-                            ),
-                          );
-                        }),
+                            return AnimatedContainer(
+                              duration: const Duration(milliseconds: 300),
+                              margin: const EdgeInsets.symmetric(
+                                horizontal: 5,
+                              ),
+                              width: _active ? 26 : 15,
+                              height: 15,
+                              decoration: BoxDecoration(
+                                color: _active ? const Color(0xFF989898) : const Color(0xFFC4C4C4),
+                                borderRadius: _active ? BorderRadius.circular(7) : BorderRadius.circular(15),
+                              ),
+                            );
+                          },
+                        ),
                     ],
                   ),
                   const SizedBox(
                     height: paddingsBig,
                   ),
-                  Builder(builder: (context) {
-                    final _index = _isNext ? _page.ceil() : _page.floor();
+                  Builder(
+                    builder: (context) {
+                      final _index = _isNext ? _page.ceil() : _page.floor();
 
-                    return AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 300),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: 46,
-                        child: ElevatedButton(
-                          onPressed: _index == 0 ? _nextPage : _signIn,
-                          child: Text(
-                            _index == 0 ? S.of(context).next : S.of(context).sign_in,
+                      return AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 300),
+                        child: SizedBox(
+                          width: double.infinity,
+                          height: 46,
+                          child: ElevatedButton(
+                            onPressed: _index == 0 ? _nextPage : _signIn,
+                            child: Text(
+                              _index == 0 ? S.of(context).next : S.of(context).sign_in,
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  }),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),

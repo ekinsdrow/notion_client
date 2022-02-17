@@ -4,7 +4,7 @@ import 'package:notion_client/data/models/auth.dart';
 import 'package:notion_client/data/models/auth_body.dart';
 import 'package:retrofit/retrofit.dart';
 
-import '../models/search_list.dart';
+import 'package:notion_client/data/models/search_list.dart';
 
 part 'notion_client.g.dart';
 
