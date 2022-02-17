@@ -7,7 +7,8 @@ class HorizontalPagesListView extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<HorizontalPagesListView> createState() => _HorizontalPagesListViewState();
+  State<HorizontalPagesListView> createState() =>
+      _HorizontalPagesListViewState();
 }
 
 class _HorizontalPagesListViewState extends State<HorizontalPagesListView> {

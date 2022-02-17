@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../theme/paddings.dart';
+import 'package:notion_client/presentation/theme/paddings.dart';
 
 class RetryErrorWidget extends StatelessWidget {
   const RetryErrorWidget({

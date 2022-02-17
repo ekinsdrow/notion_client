@@ -1,7 +1,9 @@
+// ignore_for_file: lines_longer_than_80_chars
+
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:notion_client/data/models/base_object_parent.dart';
 import 'package:notion_client/data/models/interfaces/base_list.dart';
 import 'package:notion_client/data/models/interfaces/base_object.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'workspace_graph.freezed.dart';
 

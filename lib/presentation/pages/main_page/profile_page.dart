@@ -1,7 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:notion_client/data/repositories/token_repository.dart';
 import 'package:notion_client/internal/routers/router.gr.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:provider/provider.dart';
 
 class ProfilePage extends StatelessWidget {
