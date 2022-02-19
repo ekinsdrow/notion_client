@@ -20,5 +20,11 @@ abstract class NotionClient {
   @POST('search')
   Future<SearchList> getAllUserPages({
     @Header('Authorization') required String token,
+  });  
+  
+  @POST('search')
+  Future<SearchList> search({
+    @Header('Authorization') required String token,
+    @Body() required Map<String, dynamic> query,
   });
 }

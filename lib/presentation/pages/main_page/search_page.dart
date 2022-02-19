@@ -1,41 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:notion_client/presentation/theme/paddings.dart';
-import 'package:notion_client/presentation/widgets/search_input.dart';
+import 'package:notion_client/internal/di/search_scope.dart';
+import 'package:notion_client/presentation/components/search_component.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: paddingsBetweenElem,
-          ),
-          child: Column(
-            children: const [
-              SizedBox(
-                height: paddingsTopPage,
-              ),
-              SearchInput(
-                autofocus: true,
-              ),
-              SearchResults(),
-            ],
-          ),
-        ),
-      ),
+    return const SearchScope(
+      child: SearchComponent(),
     );
-  }
-}
-
-//TODO (Anya): search results
-class SearchResults extends StatelessWidget {
-  const SearchResults({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

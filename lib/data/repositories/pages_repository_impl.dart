@@ -17,4 +17,15 @@ class PagesRepositoryImpl implements PagesRepository {
       token: token,
     );
   }
+
+  @override
+  Future<SearchList> search({
+    required String request,
+  }) =>
+      notionClient.search(
+        token: token,
+        query: {
+          'query': request,
+        },
+      );
 }

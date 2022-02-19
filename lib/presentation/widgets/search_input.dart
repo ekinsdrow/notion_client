@@ -33,6 +33,7 @@ class SearchInput extends StatelessWidget {
 
           return TextField(
             autofocus: autofocus,
+            controller: textEditingController,
             decoration: InputDecoration(
               filled: true,
               fillColor: const Color(0xFFFBFAFA),
