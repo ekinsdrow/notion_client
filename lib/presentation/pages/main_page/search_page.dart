@@ -1,9 +1,24 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:notion_client/presentation/theme/back_button.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
 import 'package:notion_client/presentation/widgets/search_input.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
+
+  @override
+  State<SearchPage> createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
+  final searchController = TextEditingController();
+
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +29,21 @@ class SearchPage extends StatelessWidget {
             horizontal: paddingsBetweenElem,
           ),
           child: Column(
-            children: const [
-              SizedBox(
-                height: paddingsTopPage,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              BackButtonWidget(
+                callback: () {
+                  context.router.pop();
+                },
+              ),
+              const SizedBox(
+                height: paddingsBig,
               ),
               SearchInput(
                 autofocus: true,
+                textEditingController: searchController,
               ),
-              SearchResults(),
+              const SearchResults(),
             ],
           ),
         ),
