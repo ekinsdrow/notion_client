@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notion_client/domain/blocs/search_bloc/search_bloc.dart';
+import 'package:notion_client/presentation/theme/back_button.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
 import 'package:notion_client/presentation/widgets/loader.dart';
 import 'package:notion_client/presentation/widgets/retry_error_widget.dart';
@@ -50,9 +52,15 @@ class _SearchComponentState extends State<SearchComponent> {
             horizontal: paddingsBetweenElem,
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              BackButtonWidget(
+                callback: () {
+                  context.router.pop();
+                },
+              ),
               const SizedBox(
-                height: paddingsTopPage,
+                height: paddingsBig,
               ),
               SearchInput(
                 autofocus: true,
