@@ -14,7 +14,6 @@ class HomePage extends StatelessWidget {
     return HomePageScope(
       child: BlocBuilder<HomePageBloc, HomePageState>(
         builder: (context, state) {
-         
           if (state is Error) {
             return Center(
               child: RetryErrorWidget(

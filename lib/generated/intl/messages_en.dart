@@ -28,8 +28,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "lorem_ipsum": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ."),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "oops":
+            MessageLookupByLibrary.simpleMessage("Oops. An error has occurred"),
         "open_notion": MessageLookupByLibrary.simpleMessage("Open notion.so"),
         "pages_list": MessageLookupByLibrary.simpleMessage("Pages list"),
+        "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
         "token": MessageLookupByLibrary.simpleMessage("Token"),
