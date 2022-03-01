@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:notion_client/presentation/assets_paths/resources.dart';
+import 'package:notion_client/presentation/theme/theme.dart';
 
 class SearchInput extends StatelessWidget {
   const SearchInput({
@@ -33,6 +34,7 @@ class SearchInput extends StatelessWidget {
 
           return TextField(
             autofocus: autofocus,
+            controller: textEditingController,
             decoration: InputDecoration(
               filled: true,
               fillColor: const Color(0xFFFBFAFA),
@@ -46,6 +48,26 @@ class SearchInput extends StatelessWidget {
                 ),
                 child: SvgPicture.asset(SvgPath.search),
               ),
+              suffixIcon: textEditingController == null
+                  ? null
+                  : GestureDetector(
+                      onTap: () {
+                        textEditingController?.clear();
+                        print('re');
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          left: 20,
+                          top: 20,
+                          bottom: 20,
+                          right: 15,
+                        ),
+                        child: Icon(
+                          Icons.close,
+                          color: AppTheme.primaryColor,
+                        ),
+                      ),
+                    ),
               hintStyle: const TextStyle(
                 color: Color(0xFFC4C4C4),
               ),

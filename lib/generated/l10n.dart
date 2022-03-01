@@ -90,6 +90,16 @@ class S {
     );
   }
 
+  /// `Oops. An error has occurred`
+  String get oops {
+    return Intl.message(
+      'Oops. An error has occurred',
+      name: 'oops',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Open notion.so`
   String get open_notion {
     return Intl.message(
@@ -105,6 +115,16 @@ class S {
     return Intl.message(
       'Pages list',
       name: 'pages_list',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retry`
+  String get retry {
+    return Intl.message(
+      'Retry',
+      name: 'retry',
       desc: '',
       args: [],
     );
