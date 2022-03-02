@@ -23,12 +23,14 @@ class MainPage extends StatelessWidget {
           HomeRouter(),
           ProfileRouter(),
         ],
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: SvgPicture.asset(
-            SvgPath.add,
-          ),
-        ),
+        floatingActionButton: MediaQuery.of(context).viewInsets.bottom != 0.0
+            ? null
+            : FloatingActionButton(
+                onPressed: () {},
+                child: SvgPicture.asset(
+                  SvgPath.add,
+                ),
+              ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBuilder: (context, tabsRouter) => BottomNavigationBar(
           items: [
