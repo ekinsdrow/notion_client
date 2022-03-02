@@ -1,9 +1,12 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notion_client/domain/blocs/auth_bloc/auth_bloc.dart';
 import 'package:notion_client/internal/di/auth_page_scope.dart';
 import 'package:notion_client/internal/routers/router.gr.dart';
+import 'package:notion_client/presentation/pages/auth_page/webview_register/register_web_webview_stub.dart'
+    if (dart.library.html) 'package:notion_client/presentation/pages/auth_page/webview_register/register_web.dart';
 import 'package:notion_client/presentation/theme/theme.dart';
 import 'package:notion_client/presentation/widgets/loader.dart';
 import 'package:oauth2/oauth2.dart' as oauth2;
@@ -19,13 +22,16 @@ class AuthPage extends StatefulWidget {
 }
 
 class _AuthPageState extends State<AuthPage> {
-  final redirectUrl = Uri.parse('https://ekinsdrow.ru/notion/oauth-success.html');
+  final redirectUrl =
+      Uri.parse('https://ekinsdrow.ru/notion/oauth-success.html');
   late Uri _authorizationUrl;
   var _loadingBloc = false;
   var _loadingWebView = true;
 
   @override
   void initState() {
+    registerWebViewWebImplementation();
+
     const identifier = '334d1a5c-d1f5-4836-8669-83ed18e5e6dc';
     const secret = '';
     final authorizationEndpoint = Uri.parse(
