@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:notion_client/domain/use_cases/workspace_graph.dart';
 import 'package:notion_client/presentation/assets_paths/resources.dart';
+import 'package:notion_client/presentation/modals/page_actions_modal.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
 
 class PageListViewItem extends StatefulWidget {
@@ -18,6 +19,13 @@ class PageListViewItem extends StatefulWidget {
 
 class _PageListViewItemState extends State<PageListViewItem> {
   var showChild = false;
+
+  void openItemModal() {
+    showPageActionModal(
+      context: context,
+      object: widget.object,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,26 +69,36 @@ class _PageListViewItemState extends State<PageListViewItem> {
                   ),
                 ],
               ),
-              Row(
-                children: [
-                  for (int i = 0; i < 3; i++)
-                    Row(
-                      children: [
-                        Container(
-                          height: 5,
-                          width: 5,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xFFC4C4C4),
-                          ),
+              GestureDetector(
+                onTap: openItemModal,
+                child: Container(
+                  color: Colors.transparent,
+                  height: 20,
+                  width: 40,
+                  alignment: Alignment.centerRight,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      for (int i = 0; i < 3; i++)
+                        Row(
+                          children: [
+                            Container(
+                              height: 5,
+                              width: 5,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Color(0xFFC4C4C4),
+                              ),
+                            ),
+                            if (i != 3)
+                              const SizedBox(
+                                width: 2,
+                              ),
+                          ],
                         ),
-                        if (i != 3)
-                          const SizedBox(
-                            width: 2,
-                          ),
-                      ],
-                    ),
-                ],
+                    ],
+                  ),
+                ),
               ),
             ],
           ),

@@ -22,7 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "actions": MessageLookupByLibrary.simpleMessage("Действия"),
+        "add_to_fav":
+            MessageLookupByLibrary.simpleMessage("Добавить в избранное"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Отменить"),
+        "copy": MessageLookupByLibrary.simpleMessage("Копировать"),
+        "copy_link": MessageLookupByLibrary.simpleMessage("Копировать ссылку"),
+        "edit": MessageLookupByLibrary.simpleMessage("Редактировать"),
         "fav": MessageLookupByLibrary.simpleMessage("Избранное"),
+        "go_to": MessageLookupByLibrary.simpleMessage("Перейти к"),
         "hello_header": MessageLookupByLibrary.simpleMessage(
             "Привет, мы рады, что ты с нами!"),
         "lorem_ipsum": MessageLookupByLibrary.simpleMessage(
@@ -32,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "open_notion":
             MessageLookupByLibrary.simpleMessage("Открыть notion.so"),
         "pages_list": MessageLookupByLibrary.simpleMessage("Список страниц"),
+        "remove": MessageLookupByLibrary.simpleMessage("Удалить"),
         "retry": MessageLookupByLibrary.simpleMessage("Повторить"),
         "search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Войти"),
