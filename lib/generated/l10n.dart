@@ -50,11 +50,81 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Actions`
+  String get actions {
+    return Intl.message(
+      'Actions',
+      name: 'actions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to favorites`
+  String get add_to_fav {
+    return Intl.message(
+      'Add to favorites',
+      name: 'add_to_fav',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copy`
+  String get copy {
+    return Intl.message(
+      'Copy',
+      name: 'copy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copy Link`
+  String get copy_link {
+    return Intl.message(
+      'Copy Link',
+      name: 'copy_link',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message(
+      'Edit',
+      name: 'edit',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Favorites`
   String get fav {
     return Intl.message(
       'Favorites',
       name: 'fav',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to`
+  String get go_to {
+    return Intl.message(
+      'Go to',
+      name: 'go_to',
       desc: '',
       args: [],
     );
@@ -120,6 +190,16 @@ class S {
     );
   }
 
+  /// `Remove`
+  String get remove {
+    return Intl.message(
+      'Remove',
+      name: 'remove',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Retry`
   String get retry {
     return Intl.message(
@@ -130,21 +210,21 @@ class S {
     );
   }
 
-  /// `Sign in`
-  String get sign_in {
-    return Intl.message(
-      'Sign in',
-      name: 'sign_in',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Search`
   String get search {
     return Intl.message(
       'Search',
       name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in`
+  String get sign_in {
+    return Intl.message(
+      'Sign in',
+      name: 'sign_in',
       desc: '',
       args: [],
     );

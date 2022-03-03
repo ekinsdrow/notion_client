@@ -22,7 +22,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "actions": MessageLookupByLibrary.simpleMessage("Actions"),
+        "add_to_fav": MessageLookupByLibrary.simpleMessage("Add to favorites"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "copy": MessageLookupByLibrary.simpleMessage("Copy"),
+        "copy_link": MessageLookupByLibrary.simpleMessage("Copy Link"),
+        "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "fav": MessageLookupByLibrary.simpleMessage("Favorites"),
+        "go_to": MessageLookupByLibrary.simpleMessage("Go to"),
         "hello_header": MessageLookupByLibrary.simpleMessage(
             "Hello, we are glad that you are with us!"),
         "lorem_ipsum": MessageLookupByLibrary.simpleMessage(
@@ -32,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Oops. An error has occurred"),
         "open_notion": MessageLookupByLibrary.simpleMessage("Open notion.so"),
         "pages_list": MessageLookupByLibrary.simpleMessage("Pages list"),
+        "remove": MessageLookupByLibrary.simpleMessage("Remove"),
         "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
