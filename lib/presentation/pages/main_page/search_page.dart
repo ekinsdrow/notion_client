@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:notion_client/presentation/theme/back_button.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
+import 'package:notion_client/presentation/widgets/back_button.dart';
 import 'package:notion_client/presentation/widgets/search_input.dart';
 
 class SearchPage extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notion_client/generated/l10n.dart';
-import 'package:notion_client/presentation/theme/back_button.dart';
 import 'package:notion_client/presentation/theme/paddings.dart';
+import 'package:notion_client/presentation/widgets/back_button.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({
